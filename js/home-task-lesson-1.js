@@ -95,8 +95,8 @@
 // console.log("modifyHeight is", typeof modifyHeight);
 // // 3. Индекс массы тела округлить до 1 цифры после запятой
 // const bmi = modifyWeight / Math.pow(modifyHeight, 2);
-// let modifeBmi = bmi.toFixed(1);
-// console.log(modifeBmi); // 28.8
+// let modifyBmi = bmi.toFixed(1);
+// console.log(modifyBmi); // 28.8
 
 // Example 7 - Операторы сравнения и приведение типов
 // Каким будет результат выражений?
@@ -131,9 +131,48 @@
 // console.log(null || (2 && 3) || 4);
 
 // Example 9 - Значение по умолчанию и оператор нулевого слияния
-// Отрефактори код так, чтобы в переменную value присваивалось значение переменной incomingValue, если оно не равно undefined или null. В противном случае должно присваиваться значение defaultValue. Проверь работу скрипта для слепдующих значений переменной incomingValue: null, undefined, 0, false. Используй оператор ?? (nullish coalescing operator).
+// Отрефактори код так, чтобы в переменную value присваивалось значение переменной incomingValue, если оно не равно undefined или null. В противном случае должно присваиваться значение defaultValue. Проверь работу скрипта для следующих значений переменной incomingValue: null, undefined, 0, false. Используй оператор ?? (nullish coalescing operator).
 
-const incomingValue = 5;
-const defaultValue = 10;
-const value = incomingValue || defaultValue;
-console.log(value);
+// const incomingValue = 5;
+// const defaultValue = 10;
+// const value = incomingValue || defaultValue;
+// console.log(value);
+
+// Решение 1:
+// const incomingValue = 5;
+// const defaultValue = 10;
+// const value = (incomingValue !== null && incomingValue !== undefined) ? incomingValue : defaultValue;
+// console.log(value);
+
+// Решение 2 с использованием оператора нулевого слияния ?? (nullish coalescing operator):
+// const incomingValue = 5;
+// const defaultValue = 10;
+// const value = incomingValue ?? defaultValue;
+// console.log(value);
+
+// Example 10 - Оперaтор % и методы строк
+// Напиши скрипт который переведёт значение totalMinutes (количество минут) в строку в формате часов и минут HH:MM.
+
+// 70 покажет 01:10
+// 450 покажет 07:30
+// 1441 покажет 24:01
+// const totalMinutes = 70;
+
+// const hours = Math.floor(totalMinutes / 60);
+// const minutes = totalMinutes % 60;
+// console.log(hours);
+// console.log(minutes);
+
+// const doubleDigitHours = String(hours).padStart(2, 0);
+// const doubleDigitMinutes = String(minutes).padStart(2, 0);
+// console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
+
+// Решение:
+// const totalMinutes = 1441;
+// const hours = Math.floor(totalMinutes / 60);
+// console.log(hours);
+// const minutes = totalMinutes % 60;
+// console.log(minutes);
+// const modifyHours = String(hours).padStart(2, "0");
+// const modifyMinutes = String(minutes).padStart(2, "0");
+// console.log(`${modifyHours}:${modifyMinutes}`);
