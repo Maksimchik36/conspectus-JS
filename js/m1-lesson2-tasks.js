@@ -97,32 +97,17 @@
 // ------------------- ВОПРОС ПО УСЛОВИЮ -------------------------
 
 // Example 7 - Форматирование ссылки (тернарный оператор)
-// // Выполни рефакторинг кода задачи номер 4 используя тернарный оператор.
+// // Выполни рефакторинг кода предыдущей задачи используя тернарный оператор.
 // let link = 'https://somesite.com/about';
 // if (link.includes('my-site') && !link.endsWith('/')) {
 //   link += '/';
 // }
 // console.log(link);
 
-
-// Решение 4 задания:
-
-// const a = 120;
-// const b = 180;
-// let message;
-// if (a > 100 && b > 100) {
-//     if (a > b) {
-//         message = a;
-//     } else message = b;
-// } else message = b + 512;
-// console.log(message);
-
-//Попытка использовать тернарник:
-// const a = 120;
-// const b = 180;
-// let message;
-// message = a > 100 && b > 100 ? a > b : b + 512;
-// console.log(message);
+// Решение:
+// let link = 'https://somesite.com/about';
+// link = link.includes('my-site') && !link.endsWith('/') ? link += "/" : link;
+// console.log(link);
 
 // Example 8 - if...else и логические операторы
 // Напиши скрипт который будет выводить в консоль браузера строку в зависимости от значения переменной hours.
@@ -155,14 +140,14 @@
 // Пиши код ниже этой строки
 
 // Решение:
-// const daysUntilDeadline = 5;
+// const daysUntilDeadline = 2;
 // let message;
-// if (daysUntilDeadline === 0) {
+// if (daysUntilDeadline < 1) {
 //     message = "Сегодня";
-// } else if (daysUntilDeadline === 1) {
+// } else if (daysUntilDeadline < 2) {
 //     message = "Завтра";
 // }
-// else if (daysUntilDeadline === 2) {
+// else if (daysUntilDeadline < 3) {
 //     message = "Послезавтра";
 // } else message = "Дата в будущем";
 // console.log(message);
@@ -172,20 +157,20 @@
 // Example 10 - Дедлайн сдачи проекта (switch)
 // Выполни рефакторинг кода задачи номер 5 используя switch.
 
-// const daysUntilDeadline = 5;
-
-// if (daysUntilDeadline === 0) {
-//   console.log('Сегодня');
-// } else if (daysUntilDeadline === 1) {
-//   console.log('Завтра');
-// } else if (daysUntilDeadline === 2) {
-//   console.log('Послезавтра');
-// } else {
-//   console.log('Дата в будущем');
+// const daysUntilDeadline = 2;
+// let message;
+// if (daysUntilDeadline < 1) {
+//     message = "Сегодня";
+// } else if (daysUntilDeadline < 2) {
+//     message = "Завтра";
 // }
+// else if (daysUntilDeadline < 3) {
+//     message = "Послезавтра";
+// } else message = "Дата в будущем";
+// console.log(message);
 
 // Решение:
-// const daysUntilDeadline = 3;
+// const daysUntilDeadline = 5;
 // let message;
 // switch (daysUntilDeadline) {
 //     case 0:
