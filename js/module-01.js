@@ -747,3 +747,21 @@
 // }
 
 // В вышеуказанном примере console.log("Нечетное i: ", i); отрабатывает как else для условия в if.
+
+// Написание небольшой игрушки:
+
+// let count = 0;
+// let userInput;
+// const x = Math.round(Math.random()*100)+1;
+
+// do {
+//     count += 1;
+//     userInput = Number(prompt("Введите число от 1 до 100"));
+//     if (x > userInput) {
+//         console.log("x > ", userInput);
+//     } else if (x < userInput) {
+//         console.log("x < ", userInput);
+//     } else console.log(`Вы отгадали! Правильный ответ - ${x}`);
+// } while (x !== userInput);
+//     console.log(`Использовано попыток - ${count}`);
+

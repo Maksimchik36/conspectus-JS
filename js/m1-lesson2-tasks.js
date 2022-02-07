@@ -93,9 +93,6 @@
 // // Пиши код выше этой строки
 // console.log(link);
 
-
-// ------------------- ВОПРОС ПО УСЛОВИЮ -------------------------
-
 // Example 7 - Форматирование ссылки (тернарный оператор)
 // // Выполни рефакторинг кода предыдущей задачи используя тернарный оператор.
 // let link = 'https://somesite.com/about';
@@ -120,13 +117,13 @@
 // const hours = 10;
 
 // Решение:
-// const hours = 10;
+// const hours = 30;
 // let message;
 // if (hours < 17) {
-//     message = "Pending";
+    // message = "Pending";
 // } else if (hours >= 17 && hours <= 24) {
-//     message = "Expires";
-// } else message = "Overdue";
+    // message = "Expires";
+// } else { message = "Overdue"; }
 // console.log(message);
 
 // Example 9 - Дедлайн сдачи проекта (if...else)
@@ -142,29 +139,27 @@
 // Решение:
 // const daysUntilDeadline = 2;
 // let message;
-// if (daysUntilDeadline < 1) {
+// if (daysUntilDeadline === 0) {
 //     message = "Сегодня";
-// } else if (daysUntilDeadline < 2) {
+// } else if (daysUntilDeadline === 1) {
 //     message = "Завтра";
 // }
-// else if (daysUntilDeadline < 3) {
+// else if (daysUntilDeadline === 2) {
 //     message = "Послезавтра";
 // } else message = "Дата в будущем";
 // console.log(message);
 
-// ------------------ ВОПРОС ПО УСЛОВИЮ --------------------
-
 // Example 10 - Дедлайн сдачи проекта (switch)
-// Выполни рефакторинг кода задачи номер 5 используя switch.
+// Выполни рефакторинг кода предыдущей задачи, используя switch.
 
 // const daysUntilDeadline = 2;
 // let message;
-// if (daysUntilDeadline < 1) {
+// if (daysUntilDeadline === 0) {
 //     message = "Сегодня";
-// } else if (daysUntilDeadline < 2) {
+// } else if (daysUntilDeadline === 1) {
 //     message = "Завтра";
 // }
-// else if (daysUntilDeadline < 3) {
+// else if (daysUntilDeadline === 2) {
 //     message = "Послезавтра";
 // } else message = "Дата в будущем";
 // console.log(message);
@@ -220,8 +215,10 @@
 //     if (passwordInput === "Я админ") {
 //         console.log("Здравствуйте!");
 //     } else console.log("Неверный пароль");
-// } else if (loginInput === null || loginInput === undefined) {
-//     console.log("Отменено");
+// } else {
+//     if (loginInput === null || loginInput === undefined) {
+//         console.log("Отменено");
+//     }
+//     else console.log("Я Вас не знаю")
 // }
-// else console.log("Я Вас не знаю")
     
