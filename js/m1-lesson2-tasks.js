@@ -1,3 +1,5 @@
+//https://github.com/goitacademy/js-instructor-examples
+
 // Модуль 1. Занятие 2. Ветвления.Циклы
 
 // Example 1 - Ввод пользователя и ветвления

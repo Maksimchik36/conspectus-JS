@@ -1,3 +1,5 @@
+//https://github.com/goitacademy/js-instructor-examples
+
 // Модуль 1. Занятие 1. Переменные, типы и операторы
 
 // Example 1 - Базовые математические операторы
