@@ -24,7 +24,7 @@
 // Напиши скрипт для вычисления площади прямоугольника со сторонами, значения которых хранятся в переменной values в виде строки. Значения гарантированно разделены пробелом.
 
 // const values = '8 11';
-// let arr = values.split(" ");
+// let arr = values.split(" ");//преобразовать в число
 // console.log(arr);
 // let area = arr[0] * arr[1];
 // console.log(area);
@@ -45,7 +45,7 @@
 // const phones = '89001234567,89001112233,890055566377,890055566300';
 // const arrNames = names.split(",");
 // const arrPhones = phones.split(",");
-// for (let i = 0; i < 4; i += 1){
+// for (let i = 0; i < arrNames.length; i += 1){
 //     console.log(arrNames[i], "-", arrPhones[i]);
 // }
 
@@ -57,10 +57,13 @@
 // let arr = string.split(" ");
 // console.log(arr);
 // let result = arr.slice(1, length - 1);
+// result = result.join(" ");
 // console.log(result);
 
 // Example 6 - Массивы и строки
 // Напиши скрипт который «разворачивает» строку (обратный порядок букв) и выводит ее в консоль.
+
+// посмотреть пример
 
 // const string = 'Welcome to the future';
 // let newString = "";
@@ -72,11 +75,16 @@
 // Example 7 - Сортировка массива с циклом
 // Напиши скрипт сортировки массива строк в алфавитном порядке по первой букве элемента.
 
+
+// пример посмотреть
+
 // const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
 // console.log(langs.sort());
 
 // Example 8 - Поиск элемента
 // Напиши скрипт поиска самого маленького числа в массиве. Код должен работать для любого массива чисел. Используй цикл для решения задачи.
+
+// посмотреть пример
 
 // const numbers = [2, 17, 94, 1, 23, 37];
 // let min = numbers[0];
