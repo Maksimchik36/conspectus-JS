@@ -688,11 +688,11 @@
 // const target = 3;
 // let sum = 0;
 // for (let i = 0; i <= target; i += 1) {
-//     console.log("do", i);
+//     console.log("Значение элемента равно", i);
 //     sum += i;
-//     console.log("sum", sum);
+//     console.log("Сумма равна", sum);
 // }
-// console.log("total", sum);
+// console.log("Общая сумма равна", sum);
 
 // Как работает этот цикл:
 // 1. i = 0
