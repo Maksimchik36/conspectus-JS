@@ -535,3 +535,16 @@ const books = [
 
 // const averageRating = (totalRating / books.length).toFixed(1);
 // console.log(averageRating); // 8.2
+
+
+// !!! ВАЖНО  !!!!! - если мы сравниваем объекты, то они НЕ РАВНЫ между собой (как и массивы) 
+// !!! - а если мы сравниваем переменные, которые указывают на один и тот же объект, то они всегда равны, т.к. являются ССЫЛКАМИ.
+// {par:1} === {par:1} // false - это 2 разных объекта и расположены в разных ячейках памяти
+// console.log({ par: 1 } === { par: 1 })// false
+// const a = { par: 1 };
+// let b = a; // true - a и b - это ссылки на один и тот же объект
+// console.log(a === b); // true
+// b.plus = "+";
+// console.log("Объект a равен", a);
+// console.log("Объект b равен", b);
+// console.log(a === b); // true
