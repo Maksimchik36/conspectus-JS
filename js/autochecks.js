@@ -319,7 +319,7 @@
 // Напиши функцию filterArray(numbers, value), которая принимает массив чисел (параметр numbers) и возвращает новый массив, в котором будут только те элементы массива numbers, которые больше чем значение параметра value (число).
 
 // function filterArray(numbers, value) {
-  
+
 //    // Change code below this line
 // let newArray = [];
 //   for(const number of numbers){
@@ -512,7 +512,7 @@
 
 //   for (let i = start; i <= end; i += 1) {
 //     if (i % divisor === 0) {
-    
+
 //   return i;
 //     }
 //   }
@@ -1193,7 +1193,7 @@
 // return array;
 
 
-  // Change code above this line
+// Change code above this line
 // }
 
 // console.log(getAllPropValues())
@@ -1239,3 +1239,969 @@
 
 // Модуль 3. Задача 21
 
+// Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// const {yesterday, today, tomorrow} = highTemperatures;
+
+// // Change code above this line
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+// Объявлена переменная highTemperatures
+// Значение переменной highTemperatures это объект
+// Объявлена переменная yesterday с помощью деструктуризации
+// Значение переменной yesterday это число 28
+// Объявлена переменная today с помощью деструктуризации
+// Значение переменной today это число 26
+// Объявлена переменная tomorrow с помощью деструктуризации
+// Значение переменной tomorrow это число 33
+// Объявлена переменная meanTemperature
+// Значение переменной meanTemperature это число 29
+// Используется синтаксис деструктуризации объекта highTemperatures
+
+
+// Модуль 3. Задача 22
+// В прогнозе максимальных температур также может быть необязательное свойство icon - иконка погоды. Замени объявления переменных yesterday, today, tomorrow и icon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для icon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// const {today, tomorrow, yesterday, icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"} = highTemperatures;
+// // Change code above this line
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+// Объявлена переменная highTemperatures
+// Значение переменной highTemperatures это объект
+// Объявлена переменная highTemperatures
+// Значение переменной highTemperatures это объект
+// Объявлена переменная yesterday с помощью деструктуризации
+// Значение переменной yesterday это число 28
+// Объявлена переменная today с помощью деструктуризации
+// Значение переменной today это число 26
+// Объявлена переменная tomorrow с помощью деструктуризации
+// Значение переменной tomorrow это число 33
+// Объявлена переменная icon с помощью деструктуризации
+// Значение переменной icon это строка "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+// Используется деструктуризация объекта
+
+
+// Модуль 3. Задача 23
+// Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+// const { yesterday: highYesterday, today: highToday, tomorrow: highTomorrow, icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+// } = highTemperatures;
+
+// // Change code above this line
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+
+// Объявлена переменная highTemperatures
+// Значение переменной highTemperatures это объект
+// Объявлена переменная highYesterday
+// Значение переменной highYesterday это число 28
+// Объявлена переменная highToday
+// Значение переменной highToday это число 26
+// Объявлена переменная highTomorrow
+// Значение переменной highTomorrow это число 33
+// Объявлена переменная highIcon
+// Значение переменной highIcon это строка "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
+// Используется деструктуризация объекта
+
+
+// Модуль 3. Задача 24
+// Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
+
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+// // Change code below this line
+
+// for (const {hex, rgb} of colors) {
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
+
+// Объявлена переменная colors
+// Значение переменной colors это массив
+// Объявлена переменная hexColors
+// Значение переменной hexColors это массив ["#f44336", "#2196f3", "#4caf50", "#ffeb3b"]
+// Объявлена переменная rgbColors
+// Значение переменной rgbColors это массив ["244,67,54", "33,150,243", "76,175,80", "255,235,59"]
+// Для перебора массива используется цикл for...of
+// В цикле for...of используется деструктуризация объекта
+
+
+// Модуль 3. Задача 25
+// Мы получили прогноз погоды на два дня, с минимальными и максимальными температурами, а также необязательными иконками. Замени объявления всех переменных одной операцией деструктуризации свойств объекта forecast. Задай значение по умолчанию для иконок, переменных todayIcon и tomorrowIcon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+//   },
+// };
+// // Change code below this line
+// const {tomorrow: {low: lowTomorrow, high: highTomorrow, icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"}, today: {low: lowToday, high: highToday, icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"}} = forecast;
+
+
+// Объявлена переменная forecast
+// Значение переменной forecast это объект
+// Объявлена переменная highToday с помощью деструктуризации
+// Значение переменной highToday это число 32
+// Объявлена переменная lowToday с помощью деструктуризации
+// Значение переменной lowToday это число 28
+// Объявлена переменная todayIcon с помощью деструктуризации
+// Значение переменной todayIcon это строка "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg"
+// Объявлена переменная highTomorrow с помощью деструктуризации
+// Значение переменной highTomorrow это число 31
+// Объявлена переменная lowTomorrow с помощью деструктуризации
+// Значение переменной lowTomorrow это число 27
+// Объявлена переменная tomorrowIcon с помощью деструктуризации
+// Значение переменной tomorrowIcon это строка "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"
+// Используется синтаксис деструктуризации объекта highTemperatures
+
+
+// Модуль 3. Задача 26
+// Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата.
+// forecast = {
+//   today: { low: 10, high: 20 },
+//   tomorrow: { low: 20, high: 30 }
+// }
+// // Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
+// // Задание:
+// // Change code below this line
+// function calculateMeanTemperature(forecast) {
+//   const todayLow = forecast.today.low;
+//   const todayHigh = forecast.today.high;
+//   const tomorrowLow = forecast.tomorrow.low;
+//   const tomorrowHigh = forecast.tomorrow.high;
+
+//   // Change code above this line
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+
+// // Решение:
+// // Change code below this line
+// function calculateMeanTemperature(forecast) {
+
+//   const{ today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh }} = forecast;
+
+//   // Change code above this line
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+
+// // Объявлена функция calculateMeanTemperature(forecast)
+// // В теле функции используется деструктуризация объекта
+// // В теле функции объявлена переменная todayHigh с помощью деструктуризации
+// // В теле функции объявлена переменная todayLow с помощью деструктуризации
+// // В теле функции объявлена переменная tomorrowLow с помощью деструктуризации
+// // В теле функции объявлена переменная tomorrowHigh с помощью деструктуризации
+
+// console.log(calculateMeanTemperature({ today: {low: 28, high: 32}, tomorrow: {low: 25, high: 29} })); // возвращает 28.5
+// console.log(calculateMeanTemperature({ today: {low: 37, high: 40}, tomorrow: {low: 33, high: 38} })); // возвращает 37
+
+
+// Модуль 3. Задача 27
+// В переменной scores хранится массив результатов тестирования. Используя распыление и методы Math.max() и Math.min() дополни код так, чтобы в переменной bestScore был самый высокий балл, а в worstScore самый низкий.
+
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// // Change code below this line
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
+
+// console.log("bestScore", bestScore);
+// console.log("worstScore", worstScore);
+
+// Объявлена переменная scores
+// Значение переменной scores это массив [89, 64, 42, 17, 93, 51, 26]
+// Объявлена переменная bestScore
+// Значение переменной bestScore это число 93
+// Объявлена переменная worstScore
+// Значение переменной worstScore это число 17
+// Для передачи аргументов методу Math.max() используется синтаксис ... на массиве scores
+// Для передачи аргументов методу Math.min() используется синтаксис ... на массиве scores
+
+
+// Модуль 3. Задача 28
+// В переменных firstGroupScores, secondGroupScores и thirdGroupScores хранятся результаты тестирования отдельных групп. Используя распыление дополни код так, чтобы:
+
+// В переменной allScores хранился массив всех результатов от первой до третьей группы.
+// В переменной bestScore был самый высокий общий балл.
+// В переменной worstScore был самый низкий общий балл.
+// Объявлена переменная firstGroupScores
+// Значение переменной firstGroupScores это массив [64, 42, 93]
+
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// // Change code below this line
+// const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// Объявлена переменная secondGroupScores
+// Значение переменной secondGroupScores это массив [89, 14, 51, 26]
+// Объявлена переменная thirdGroupScores
+// Значение переменной thirdGroupScores это массив [29, 47, 18, 97, 81]
+// Объявлена переменная allScores.
+// Значение переменной allScores это массив [64, 42, 93, 89, 14, 51, 26, 29, 47, 18, 97, 81]
+// Объявлена переменная bestScore
+// Значение переменной bestScore это число 97
+// Объявлена переменная worstScore
+// Значение переменной worstScore это число 14
+// При присвоении значения переменной allScores использовался синтаксис ... для заполнения массива
+// Для передачи аргументов методу Math.max() используется синтаксис ... на массиве allScores
+// Для передачи аргументов методу Math.min() используется синтаксис ... на массиве allScores
+
+
+// Модуль 3. Задача 29
+// В конструкторе можно создавать новые тесты, для которых есть настройки по умолчанию которые хранятся в переменной defaultSettings. Во время создания теста, все или часть настроек можно переопределить, они хранятся в переменной overrideSettings.
+
+// Для того чтобы получить финальные настройки теста, необходимо взять настройки по умолчанию и поверх них применить переопределённые настройки. Дополни код так, чтобы в переменной finalSettings получился объект финальных настроек теста.
+
+// const defaultSettings = {
+//   theme: "light",
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
+// // Change code below this line
+// const finalSettings = {...defaultSettings, ...overrideSettings};
+
+// console.log(finalSettings);
+
+// Объявлена переменная defaultSettings
+// Значение переменной defaultSettings это объект
+// Объявлена переменная overrideSettings
+// Значение переменной overrideSettings это объект
+// Объявлена переменная finalSettings
+// Значение переменной finalSettings это объект
+// Значение свойства finalSettings.theme равно "light"
+// Значение свойства finalSettings.public равно "false"
+// Значение свойства finalSettings.withPassword равно "true"
+// Значение свойства finalSettings.minNumberOfQuestions равно 10
+// Значение свойства finalSettings.timePerQuestion равно 30
+// При присваивании значения переменной finalSettings используется синтаксис ...
+
+
+// Модуль 3. Задача 30
+// Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
+
+// text - текст задачи.
+// category - категория задачи.
+// priority - приоритет задачи.
+
+// Функция должна составить и вернуть новый объект задачи, не изменяя напрямую параметр data. В новом объекте должно быть свойство completed, значение которого хранится в одноимённой локальной переменной.
+
+// В параметре data гарантированно будет только свойство text, а остальные два, category и priority, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных.
+
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+//   // Change code below this line
+//   const newObj = { completed, category, priority, ...data };
+//   return newObj;
+//   // Change code above this line
+// }
+
+// // Объявлена функция makeTask(data)
+// console.log(makeTask({}));  //  возвращает { category: "General", priority: "Normal", completed: false }
+// console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }))  //  возвращает { category: "Homemade", priority: "Low", text: "Take out the trash", completed: false }
+// console.log(makeTask({ category: "Finance", text: "Take interest" }))  //  возвращает { category: "Finance", priority: "Normal", text: "Take interest", completed: false }
+// console.log(makeTask({ priority: "Low", text: "Choose shampoo" }))  //  возвращает { category: "General", priority: "Low", text: "Choose shampoo", completed: false }
+// console.log(makeTask({ text: "Buy bread" })) //  возвращает { category: "General", priority: "Normal", text: "Buy bread", completed: false }
+
+
+// Модуль 3. Задача 31
+// Используя операцию rest дополни код функции add() так, чтобы она принимала любое количество аргументов, считала и возвращала их сумму.
+
+// Change code below this line
+// function add(...args) {
+//     let sum = 0;
+//     for (const arg of args) {
+//         sum += arg;
+//     }
+//     // return sum;
+//     console.log(sum);
+//     // Change code above this line
+// }
+
+// Объявлена функция add
+// Функция add использует параметр args
+// Для сбора аргументов в переменную args, в подписи функции используется синтаксис ... (оперетор rest)
+// add(15, 27) // возвращает 42
+// add(12, 4, 11, 48) // возвращает 75
+// add(32, 6, 13, 19, 8) // возвращает 78
+// add(74, 11, 62, 46, 12, 36) // возвращает 241
+
+
+// Модуль 3. Задача 32
+// Функция addOverNum() считает сумму всех аргументов.Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число.Это число должно быть первым параметром функции.
+
+// // Change code below this line
+// function addOverNum(a, ...args) {
+//     let total = 0;
+
+//     for (const arg of args) {
+//         if (arg > a) {
+//             total += arg;
+//         }
+//     }
+
+//     // return total;
+//     console.log(total);
+//     // Change code above this line
+// }
+
+
+// // Объявлена функция addOverNum()
+// addOverNum(50, 15, 27) // возвращает 0
+// addOverNum(10, 12, 4, 11, 48, 10, 8) // возвращает 71
+// addOverNum(15, 32, 6, 13, 19, 8) // возвращает 51
+// addOverNum(20, 74, 11, 62, 46, 12, 36) // возвращает 218
+
+
+// Модуль 3. Задача 33
+// Функция findMatches() принимает произвольное количество аргументов.Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
+
+// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
+
+//     Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив[1, 2], потому что только они есть в массиве первого аргумента.
+
+// Change code below this line
+// function findMatches(array, ...rest) {
+//     const matches = []; // Don't change this line
+//     const newArray = [...rest];
+//     for (i = 0; i < newArray.length; i += 1) {
+//         if (array.includes(newArray[i])) {
+//             matches.push(newArray[i]);
+//         }
+//     }
+
+//     // Change code above this line
+//     return matches;
+//     console.log(matches);
+// }
+
+// // Объявлена функция findMatches()
+// findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) // возвращает[1, 2]
+// findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) // возвращает[17, 89, 2]
+// findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) // возвращает[24, 9, 41]
+// findMatches([63, 11, 8, 29], 4, 7, 16) // возвращает[]
+
+
+// Модуль 3. Задача 34
+// Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
+
+// Метод removeBook(bookName) будет удалять книгу по имени.Возвращает строку "Deleting book <имя книги>", где < имя книги > это значение параметра bookName.
+
+// Метод updateBook(oldName, newName) будет обновлять название книги на новое.Возвращает строку "Updating book <старое имя> to <новое имя>", где < старое имя > и < новое имя > это значения параметров oldName и newName соотвественно.
+
+// const bookShelf = {
+//     // Change code below this line
+//     books: ["The last kingdom", "The guardian of dreams"],
+//     getBooks() {
+//         return "Returning all books";
+//     },
+//     addBook(bookName) {
+//         return `Adding book ${bookName}`;
+//     },
+//     removeBook(bookName) {
+//         return `Deleting book ${bookName}`;
+//     },
+//     updateBook(oldName, newName) {
+//         return `Updating book ${oldName} to ${newName}`;
+//     }
+//     // Change code above this line
+// };
+
+// // Объявлена переменная bookShelf
+// // Значение переменной bookShelf это объект
+// // Значение свойства bookShelf.getBooks это метод объекта
+// console.log(bookShelf.getBooks());  // возвращает строку "Returning all books"
+// // Значение свойства bookShelf.addBook это метод объекта
+// console.log(bookShelf.addBook("Haze"))  // возвращает строку "Adding book Haze"
+// // Значение свойства bookShelf.removeBook это метод объекта
+// console.log(bookShelf.removeBook("Red sunset"))  // возвращает строку "Deleting book Red sunset"
+// // Значение свойства bookShelf.updateBook это метод объекта
+// console.log(bookShelf.updateBook("Sands of dune", "Dune"))  // возвращает строку "Updating book Sands of dune to Dune"
+
+
+// Модуль 3. Задача 35
+
+// Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books.Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент
+
+// const bookShelf = {
+//     books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//     updateBook(oldName, newName) {
+//         // Change code below this line
+//         const index = this.books.indexOf(oldName);
+//         this.books.splice(index, 1, newName);
+
+//         console.log(this.books);
+//         // Change code above this line
+//     },
+// };
+
+// // Объявлена переменная bookShelf
+// // Значение переменной bookShelf это объект
+// // Значение свойства bookShelf.updateBook это метод объекта
+// bookShelf.updateBook("Haze", "Dungeon chronicles"); // значение свойства books это массив["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+// bookShelf.updateBook("The last kingdom", "Dune"); //значение свойства books это массив["Dune", "Haze","Theguardian of dreams"]
+
+
+// Модуль 3. Задача 36
+// К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий.Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив.
+
+// const atTheOldToad = {
+//     // Change code below this line
+//     potions: [],
+//     // Change code above this line
+// };
+
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив[]
+
+// Модуль 3. Задача 37
+// Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions.
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     // Change code below this line
+//     getPotions() {
+//         // return this.potions;
+//         console.log(this.potions);
+
+//     }
+//     // Change code above this line
+// };
+
+// // Объявлена переменная atTheOldToad
+// // Значение переменной atTheOldToad это объект
+// // atTheOldToad.potions // это массив["Speed potion", "Dragon breath", "Stone skin"]
+// // // atTheOldToad.getPotions // э// то метод объекта
+// atTheOldToad.getPotions() // возвращает["Speed potion", "Dragon breath", "Stone skin"]
+
+
+// Модуль 3. Задача 38
+// Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions.
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     addPotion(potionName) {
+//         // Change code below this line
+//         this.potions.push(potionName);
+//         // Change code above this line
+//     },
+// };
+
+// //Объявлена переменная atTheOldToad
+// // Значение переменной atTheOldToad это объект
+// // Значение свойства atTheOldToad.potions это массив["Speed potion", "Dragon breath", "Stone skin"]
+// // Значение свойства atTheOldToad.addPotion это метод объекта
+// atTheOldToad.addPotion("Invisibility") // в свойстве potions будет массив["Speed potion", "Dragon breath", "Stone skin", "Invisibility"]
+// atTheOldToad.addPotion("Power potion") // в свойстве potions будет массив["Speed potion", "Dragon breath", "Stone skin", "Invisibility", "Power potion"]
+
+
+// Модуль 3. Задача 39
+// Дополни метод removePotion(potionName) так, чтобы он удалял зелье potionName из массива зелий в свойстве potions.
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     removePotion(potionName) {
+//         // Change code below this line
+//         const index = this.potions.indexOf(potionName);
+//         this.potions.splice(index, 1);
+//         console.log(this.potions);
+//         // Change code above this line
+//     },
+// };
+
+// // Объявлена переменная atTheOldToad
+// // Значение переменной atTheOldToad это объект
+// // Значение свойства atTheOldToad.potions это массив["Speed potion", "Dragon breath", "Stone skin"]
+// // Значение свойства atTheOldToad.removePotion это метод объекта
+// atTheOldToad.removePotion("Dragon breath") // в свойстве potions будет массив["Speed potion", Stone skin"]
+// atTheOldToad.removePotion("Speed potion") // в свойстве potions будет массив["Stone skin"]
+
+
+// Модуль 3. Задача 40
+// Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName, в массиве зелий в свойстве potions.
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     updatePotionName(oldName, newName) {
+//         // Change code below this line
+//         const index = this.potions.indexOf(oldName);
+//         this.potions.splice(index, 1, newName);
+//         console.log(this.potions);
+//         // Change code above this line
+//     },
+// };
+
+// // Объявлена переменная atTheOldToad
+// // Значение переменной atTheOldToad это объект
+// // Значение свойства atTheOldToad.potions это массив["Speed potion", "Dragon breath", "Stone skin"]
+// // Значение свойства atTheOldToad.updatePotionName это метод объекта
+// // atTheOldToad.updatePotionName("Dragon breath", "Polymorth") // в свойстве potions будет массив["Speed potion", "Polymorth", "Stone skin"]
+// atTheOldToad.updatePotionName("Stone skin", "Invisibility") // в свойстве potions будет массив["Speed potion", "Polymorth", "Invisibility"]
+
+
+// Модуль 3. Задача 41
+// Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками.Поэтому теперь в свойстве potions будет храниться массив объектов со следующими свойствами.
+
+// {
+//     name: "Dragon breath",
+//         price: 700
+// }
+// Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом объектов.
+
+
+// const atTheOldToad = {
+//     potions: [
+//         { name: "Speed potion", price: 460 },
+//         { name: "Dragon breath", price: 780 },
+//         { name: "Stone skin", price: 520 },
+//     ],
+//     // Change code below this line
+//     getPotions() {
+//         // return this.potions;
+//         console.log(this.potions);
+//     },
+//     addPotion(newPotion) {
+//         for (const potion of this.potions) {
+//             if (potion === newPotion) {
+//                 // return `Error! Potion ${newPotion} is already in your inventory!`;
+//                 console.log(`Error! Potion ${newPotion} is already in your inventory!`);
+//             }
+
+//             else { this.potions.push(newPotion) };
+//         }
+//     },
+//     removePotion(potionName) {
+//         const potionIndex = this.potions.indexOf(potionName);
+
+//         if (potionIndex === -1) {
+//             // return `Potion ${potionName} is not in inventory!`;
+//             console.log(`Potion ${potionName} is not in inventory!`);
+//         }
+
+//         this.potions.splice(potionIndex, 1);
+//     },
+//     updatePotionName(oldName, newName) {
+//         const potionIndex = this.potions.indexOf(oldName);
+
+//         if (potionIndex === -1) {
+//             // return `Potion ${oldName} is not in inventory!`;
+//             console.log(`Potion ${oldName} is not in inventory!`);
+//         }
+
+//         this.potions.splice(potionIndex, 1, newName);
+//     },
+//     // Change code above this line
+// };
+
+
+// //     getPotions() - метод для получения всех зелий.Возвращает значение свойства potions.
+// //         addPotion(newPotion) - добавляет зелье newPotion(уже объект) в массив в свойстве potions, но только если такого зелья еще нет в инвентаре.В противном случае возвращается строка.
+// //             removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
+// //                 updatePotionName(oldName, newName) - обновляет свойство name объекта - зелья с названием oldName на newName в массиве potions.
+
+// // Объявлена переменная atTheOldToad
+// // Значение переменной atTheOldToad это объект
+// // Значение свойства atTheOldToad.getPotions это метод объекта
+// atTheOldToad.getPotions() // для исходного объекта возвращает[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// // Значение свойства atTheOldToad.addPotion это метод объекта.
+// atTheOldToad.addPotion({ name: "Invisibility", price: 620 })  // в массиве potions последним элементом будет этот объект
+// atTheOldToad.addPotion({ name: "Power potion", price: 270 })  // в массиве potions последним элементом будет этот объект
+// // Если добавляемое зелье уже есть в массиве potions, метод addPotion возвращает строку с текстом из исходного кода
+// // Если добавляемое зелье уже есть в массиве potions, метод addPotion не добавляет в него передаваемый обьект
+// atTheOldToad.addPotion({ name: "Dragon breath", price: 700 })// массив potions не изменяется
+// Для исходного объекта после вызова atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), массив potions не изменяется
+// Для исходного объекта вызов atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), возвращает строку "Error! Potion Dragon breath is already in your inventory!"
+// Для исходного объекта вызов atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), возвращает строку "Error! Potion Stone skin is already in your inventory!"
+// Значение свойства atTheOldToad.removePotion это метод объекта
+// Для исходного объекта после вызова метода atTheOldToad.removePotion("Dragon breath"), в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 }]
+// Для исходного объекта после вызова метода atTheOldToad.removePotion("Speed potion"), в свойстве potions будет массив[{ name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// Значение свойства atTheOldToad.updatePotionName это метод объекта
+// Для исходного объекта после вызова метода atTheOldToad.updatePotionName("Dragon breath", "Polymorth"), в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 }]
+// Для исходного объекта после вызова метода atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"), в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 }]
+
+
+
+
+// МОДУЛЬ 4.
+
+// Модуль 4. Задача 1
+
+// Дополни код так, чтобы в переменной result был результат выполнения функции makePizza, а в переменной pointer была ссылка на функцию makePizza.
+
+// function makePizza() {
+//     return "Your pizza is being prepared, please wait.";
+// }
+// // Change code below this line
+
+// const result = makePizza();
+// const pointer = makePizza;
+
+
+// Объявлена функция makePizza
+// Объявлена переменная result
+// Значение переменной result это строка "Your pizza is being prepared, please wait."
+// Значение переменной result получено с помощью вызова функции
+// Объявлена переменная pointer
+// Значение переменной pointer это ссылка на функцию makePizza
+
+
+// Модуль 4. Задача 2
+
+// Дополни функцию makeMessage так, чтобы она ожидала вторым параметром(параметр callback) колбэк - функцию и возвращала ее вызов.Функция deliverPizza или makePizza будет передаваться как колбэк и ожидать аргументом имя готовой доставляемой пиццы.
+
+// function deliverPizza(pizzaName) {
+//     return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//     return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//     // return callback(pizzaName);
+//     console.log(callback(pizzaName));
+// }
+
+// // Объявлена функция deliverPizza
+// // Объявлена функция makePizza
+// // Объявлена функция makeMessage
+// // Функция makeMessage принимает два параметра, названые согласно задания, pizzaName и callback
+// makeMessage("Royal Grand", makePizza) // возвращает строку "Pizza Royal Grand is being prepared, please wait..."
+// makeMessage("Ultracheese", deliverPizza) // возвращает строку "Delivering Ultracheese pizza."
+
+
+// Модуль 4. Задача 3
+
+// Дополни второй вызов функции makePizza(pizzaName, callback), передав вторым аргументом инлайн колбэк - функцию eatPizza(pizzaName), которая логирует строку "Eating pizza <имя пиццы>".
+
+// function makePizza(pizzaName, callback) {
+//     console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//     callback(pizzaName);
+// }
+
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//     console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza("Ultracheese", function eatPizza(pizzaName) {
+//     console.log(`Eating pizza ${pizzaName}`)
+// });
+
+// Объявлена функция makePizza
+// Функция makePizza принимает два параметра
+// Вторым аргументом при вызове makePizza("Ultracheese") передана функция eatPizza с единственным параметром pizzaName
+
+
+// Модуль 4. Задача 4
+
+// Необходимо написать логику обработки заказа пиццы.Выполни рефакторинг метода order так, чтобы он принимал вторым и третим параметрами два колбэка onSuccess и onError.
+
+// Если в свойстве pizzas нет пиццы с названием из параметра pizzaName, метод order должен возвращать результат вызова колбэка onError, передавая ему аргументом строку "There is no pizza with a name <имя пиццы> in the assortment."
+// Если в свойстве pizzas есть пицца с названием из параметра pizzaName, метод order должен возвращать результат вызова колбэка onSuccess, передавая ему аргументом имя заказанной пиццы.
+// После объявления объекта pizzaPalace мы добавили колбэки и вызовы методов.Пожалуйста ничего там не меняй.
+
+// const pizzaPalace = {
+//     pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//     order(pizzaName, makePizza, onOrderError) {
+//         if (pizzaPalace.pizzas.includes(pizzaName)) {
+//             return makePizza(pizzaName);
+//         }
+//         return onOrderError(`There is no pizza with a name ${pizzaName} in the assortment.`)
+//     },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//     // return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+//     console.log(`Your order is accepted. Cooking pizza ${pizzaName}.`);
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//     // return `Error! ${error}`;
+//     console.log(`Error! ${error}`);
+// }
+
+// // Method calls with callbacks
+// // pizzaPalace.order('Smoked', makePizza, onOrderError);
+// // pizzaPalace.order('Four meats', makePizza, onOrderError);
+// // pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// // pizzaPalace.order('Vienna', makePizza, onOrderError);
+
+// // Метод order объявляет три параметра
+// pizzaPalace.order("Smoked", makePizza, onOrderError) //возвращает "Your order is accepted. Cooking pizza Smoked."
+// pizzaPalace.order("Four meats", makePizza, onOrderError) //возвращает "Your order is accepted. Cooking pizza Four meats."
+// pizzaPalace.order("Big Mike", makePizza, onOrderError) //возвращает "Error! There is no pizza with a name Big Mike in the assortment."
+// pizzaPalace.order("Vienna", makePizza, onOrderError) //возвращает "Error! There is no pizza with a name Vienna in the assortment."
+
+
+// Модуль 4. Задача 5
+
+// Функция calculateTotalPrice(orderedItems) принимает один параметр orderedItems - массив чисел, и рассчитывает общую сумму его элементов, которая сохраняется в переменной totalPrice и возвращается как результат работы функции.
+
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+
+// function calculateTotalPrice(orderedItems) {
+//     let totalPrice = 0;
+//     // Change code below this line
+
+//     orderedItems.forEach(function (number) {
+//         totalPrice += number;
+//     });
+
+//     // Change code above this line
+//     return totalPrice;
+// }
+
+// // Объявлена функция calculateTotalPrice(orderedItems)
+// // Для перебора массива orderedItems использован метод forEach
+// console.log(calculateTotalPrice([12, 85, 37, 4])); // возвращает 138
+// console.log(calculateTotalPrice([164, 48, 291])); // возвращает 503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // возвращает 1116
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 6
+// Функция filterArray(numbers, value) принимает массив чисел numbers и возвращает новый массив, в котором будут только те элементы оригинального массива, которые больше чем значение параметра value.
+
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+
+// function filterArray(numbers, value) {
+//     const filteredNumbers = [];
+//     // Change code below this line
+//     numbers.forEach(function (number) {
+//         if (number > value) {
+//             filteredNumbers.push(number);
+//         }
+//     })
+
+//     // Change code above this line
+//     return filteredNumbers;
+// }
+
+// // Объявлена функция filterArray(numbers, value)
+// // Для перебора массива numbers использован метод forEach
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // возвращает[4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // возвращает[5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // возвращает[]
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // возвращает[41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // возвращает[24, 41, 76]
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 7
+// Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины в параметры firstArray и secondArray, и возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
+
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+
+// function getCommonElements(firstArray, secondArray) {
+//     const commonElements = [];
+//     // Change code below this line
+
+//     firstArray.forEach(function (number) {
+//         if (secondArray.includes(number)) {
+//             commonElements.push(number);
+//         }
+//     })
+
+//     return commonElements;
+//     // Change code above this line
+// }
+
+// // Объявлена функция getCommonElements(firstArray, secondArray)
+// // Для перебора параметра(массива) использован метод forEach
+// console.log(getCommonElements([1, 2, 3], [2, 4])); // возвращает[2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // возвращает[1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает[12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает[10, 30, 40]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // возвращает[]
+// // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 8
+// Выполни рефакторинг функции calculateTotalPrice() так, чтобы она была объявлена как стрелочная.
+
+// Change code below this line
+
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//     // Change code above this line
+//     return quantity * pricePerItem;
+// }
+
+// // Объявлена переменная calculateTotalPrice
+// // Переменной calculateTotalPrice присвоена стрелочная функция с параметрами(quantity, pricePerItem)
+// console.log(calculateTotalPrice(5, 100)); // возвращает 500
+// console.log(calculateTotalPrice(8, 60)); // возвращает 480
+// console.log(calculateTotalPrice(3, 400)); // возвращает 1200
+// // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 9
+// // Выполни рефакторинг функции calculateTotalPrice() так, чтобы она использовала неявный возврат.
+
+// // Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
+// // Change code above this line
+
+// // Объявлена переменная calculateTotalPrice
+// // Переменной calculateTotalPrice присвоена стрелочная функция с параметрами(quantity, pricePerItem)
+// // В функции использован неявный возврат
+// console.log(calculateTotalPrice(5, 100)); // возвращает 500
+// console.log(calculateTotalPrice(8, 60)); // возвращает 480
+// console.log(calculateTotalPrice(3, 400)); // возвращает 1200
+// // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 10
+// Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её объявление на стрелочную функцию.Замени коллбек - функцию передаваемую в метод forEach() на стрелочную функцию.
+
+// Change code below this line
+// const calculateTotalPrice = (orderedItems) => {
+//     let totalPrice = 0;
+
+//     orderedItems.forEach(item => totalPrice += item);
+
+//     return totalPrice;
+// }
+// // Change code above this line
+
+// // Объявлена переменная calculateTotalPrice
+// // Переменной calculateTotalPrice присвоена стрелочная функция с параметром(orderedItems)
+// // Для перебора массива orderedItems использован метод forEach
+// // Коллбек для метода forEach это стрелочная функция
+// console.log(calculateTotalPrice([12, 85, 37, 4])); // возвращает 138
+// console.log(calculateTotalPrice([164, 48, 291])); // возвращает 503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); // возвращает 1116
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 11
+// Замени объявление функции filterArray() и коллбек для метода forEach() на стрелочные функции.
+
+// Change code below this line
+// const filterArray = (numbers, value) => {
+//     const filteredNumbers = [];
+
+//     numbers.forEach(number => {
+//         if (number > value) {
+//             filteredNumbers.push(number);
+//         }
+//     });
+
+//     // Change code above this line
+//     return filteredNumbers;
+// }
+
+// // Объявлена переменная filterArray
+// // Переменной filterArray присвоена стрелочная функция с параметрами(numbers, value)
+// // Для перебора массива numbers использован метод forEach
+// // Коллбек для метода forEach это стрелочная функция
+// // Вызов функции filterArray([1, 2, 3, 4, 5], 3) возвращает[4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // возвращает[5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // возвращает[]
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // возвращает[41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // возвращает[24, 41, 76]
+// // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 12
+// Замени объявление функции getCommonElements() и коллбек для метода forEach() на стрелочные функции.
+
+// Change code below this line
+// const getCommonElements = (firstArray, secondArray) => {
+//     const commonElements = [];
+
+//     firstArray.forEach(element => {
+//         if (secondArray.includes(element)) {
+//             commonElements.push(element);
+//         }
+//     });
+
+//     // Change code above this line
+//     return commonElements;
+// }
+
+// // - Объявлена переменная getCommonElements.
+// // Переменной getCommonElements присвоена стрелочная функция с параметрами(firstArray, secondArray)
+// // Для перебора массива firstArray использован метод forEach
+// // Коллбек для метода forEach это стрелочная функция
+// console.log(getCommonElements([1, 2, 3], [2, 4])); // возвращает[2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // возвращает[1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает[12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает[10, 30, 40]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // возвращает[]
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 13
+// Функция changeEven(numbers, value) принимает массив чисел numbers и обновляет каждый элемент, значение которого это чётное число, добавляя к нему значение параметра value.
+
+// Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив чисел numbers, а создавала, наполняла и возвращала новый массив с обновлёнными значениями.
+
+function changeEven(numbers, value) {
+    // Change code below this line
+    const newArray = [...numbers];
+    console.log("newArray", newArray);
+    numbers.forEach(number){
+        if (number % 2 === 0) {
+            number = number + value;
+        }
+    }
+
+    console.log("newArray", newArray);
+    console.log('numbers', numbers);
+    // Change code above this line
+}
+
+// Объявлена функция changeEven(numbers, value)
+// Функция changeEven не изменяет значение параметра numbers
+changeEven([1, 2, 3, 4, 5], 10) // возвращает новый массив[1, 12, 3, 14, 5]
+// changeEven([2, 8, 3, 7, 4, 6], 10) // возвращает новый массив[12, 18, 3, 7, 14, 16]
+// changeEven([17, 24, 68, 31, 42], 100) // возвращает новый массив[17, 124, 168, 31, 142]
+// changeEven([44, 13, 81, 92, 36, 54], 100) // возвращает новый массив[144, 13, 81, 192, 136, 154]
+// // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
