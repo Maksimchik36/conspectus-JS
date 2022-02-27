@@ -1790,7 +1790,47 @@
 // }
 // Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом объектов.
 
+// Задание:
+// const atTheOldToad = {
+// potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+// ],
+//     // Change code below this line
+//     getPotions() {
+//     return this.potions;
+// },
+// addPotion(newPotion) {
+//     if (this.potions.includes(newPotion)) {
+//         return `Error! Potion ${newPotion} is already in your inventory!`;
+//     }
 
+//     this.potions.push(newPotion);
+// },
+// removePotion(potionName) {
+//     const potionIndex = this.potions.indexOf(potionName);
+
+//     if (potionIndex === -1) {
+//         return `Potion ${potionName} is not in inventory!`;
+//     }
+
+//     this.potions.splice(potionIndex, 1);
+// },
+// updatePotionName(oldName, newName) {
+//     const potionIndex = this.potions.indexOf(oldName);
+
+//     if (potionIndex === -1) {
+//         return `Potion ${oldName} is not in inventory!`;
+//     }
+
+//     this.potions.splice(potionIndex, 1, newName);
+// },
+//   // Change code above this line
+// };
+
+
+// Решение:
 // const atTheOldToad = {
 //     potions: [
 //         { name: "Speed potion", price: 460 },
@@ -1799,38 +1839,68 @@
 //     ],
 //     // Change code below this line
 //     getPotions() {
-//         // return this.potions;
-//         console.log(this.potions);
+//         return this.potions;
 //     },
 //     addPotion(newPotion) {
 //         for (const potion of this.potions) {
-//             if (potion === newPotion) {
-//                 // return `Error! Potion ${newPotion} is already in your inventory!`;
-//                 console.log(`Error! Potion ${newPotion} is already in your inventory!`);
+//             if (potion.name === newPotion.name) {
+//                 return `Error! Potion ${newPotion.name} is already in your inventory!`;
 //             }
-
-//             else { this.potions.push(newPotion) };
 //         }
+//         this.potions.push(newPotion);
 //     },
 //     removePotion(potionName) {
-//         const potionIndex = this.potions.indexOf(potionName);
-
-//         if (potionIndex === -1) {
-//             // return `Potion ${potionName} is not in inventory!`;
-//             console.log(`Potion ${potionName} is not in inventory!`);
+//         for (let i = 0; i < this.potions.length; i += 1) {
+//             if (this.potions[i].name === potionName) {
+//                 this.potions.splice(i, 1);
+//             }
 //         }
-
-//         this.potions.splice(potionIndex, 1);
 //     },
 //     updatePotionName(oldName, newName) {
-//         const potionIndex = this.potions.indexOf(oldName);
-
-//         if (potionIndex === -1) {
-//             // return `Potion ${oldName} is not in inventory!`;
-//             console.log(`Potion ${oldName} is not in inventory!`);
+//         for (let i = 0; i < this.potions.length; i += 1) {
+//             if (this.potions[i].name === oldName) {
+//                 this.potions[i].name = newName;
+//             }
 //         }
+//     }
+//     // Change code above this line
+// };
 
-//         this.potions.splice(potionIndex, 1, newName);
+// Повтор:
+// const atTheOldToad = {
+//     potions: [
+//         { name: "Speed potion", price: 460 },
+//         { name: "Dragon breath", price: 780 },
+//         { name: "Stone skin", price: 520 },
+//     ],
+//     // Change code below this line
+//     getPotions() {
+//         return this.potions;
+//     },
+//     addPotion(newPotion) {
+//         for (const potion of this.potions) {
+//             if (potion.name === newPotion.name) {
+//                 return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//             }
+
+//         } this.potions.push(newPotion);
+//         return this.potions;
+//     },
+//     removePotion(potionName) {
+//         for (let i = 0; i < this.potions.length; i += 1) {
+//             if (this.potions[i].name === potionName) {
+//                 this.potions.splice(i, 1);
+//             }
+//         }
+//         return this.potions;
+//     },
+//     updatePotionName(oldName, newName) {
+//         for (const potion of this.potions) {
+//             if (potion.name === oldName) {
+//                 potion.name = newName;
+//             }
+//         }
+//         return this.potions;
 //     },
 //     // Change code above this line
 // };
@@ -1844,22 +1914,25 @@
 // // Объявлена переменная atTheOldToad
 // // Значение переменной atTheOldToad это объект
 // // Значение свойства atTheOldToad.getPotions это метод объекта
-// atTheOldToad.getPotions() // для исходного объекта возвращает[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// console.log(atTheOldToad.getPotions()); // для исходного объекта возвращает[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
 // // Значение свойства atTheOldToad.addPotion это метод объекта.
-// atTheOldToad.addPotion({ name: "Invisibility", price: 620 })  // в массиве potions последним элементом будет этот объект
-// atTheOldToad.addPotion({ name: "Power potion", price: 270 })  // в массиве potions последним элементом будет этот объект
-// // Если добавляемое зелье уже есть в массиве potions, метод addPotion возвращает строку с текстом из исходного кода
-// // Если добавляемое зелье уже есть в массиве potions, метод addPotion не добавляет в него передаваемый обьект
-// atTheOldToad.addPotion({ name: "Dragon breath", price: 700 })// массив potions не изменяется
-// Для исходного объекта после вызова atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), массив potions не изменяется
-// Для исходного объекта вызов atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), возвращает строку "Error! Potion Dragon breath is already in your inventory!"
-// Для исходного объекта вызов atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), возвращает строку "Error! Potion Stone skin is already in your inventory!"
+// console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 }))  // в массиве potions последним элементом будет этот объект
+// // console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));  // в массиве potions последним элементом будет этот объект
+// // // // Если добавляемое зелье уже есть в массиве potions, метод addPotion возвращает строку с текстом из исходного кода
+// // // // Если добавляемое зелье уже есть в массиве potions, метод addPotion не добавляет в него передаваемый обьект
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));// массив potions не изменяется
+// console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 })) // массив potions не изменяется
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 })) // возвращает строку "Error! Potion Dragon breath is already in your inventory!"
+// console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 })) // возвращает строку "Error! Potion Stone skin is already in your inventory!"
+
 // Значение свойства atTheOldToad.removePotion это метод объекта
-// Для исходного объекта после вызова метода atTheOldToad.removePotion("Dragon breath"), в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 }]
-// Для исходного объекта после вызова метода atTheOldToad.removePotion("Speed potion"), в свойстве potions будет массив[{ name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// console.log(atTheOldToad.removePotion("Dragon breath")) // в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 }]
+// console.log(atTheOldToad.removePotion("Speed potion")); // в свойстве potions будет массив[{ name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// console.log(atTheOldToad.removePotion("Speed skin"))//
+
 // Значение свойства atTheOldToad.updatePotionName это метод объекта
-// Для исходного объекта после вызова метода atTheOldToad.updatePotionName("Dragon breath", "Polymorth"), в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 }]
-// Для исходного объекта после вызова метода atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"), в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 }]
+// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth")); // в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 }]
+// console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion")); // в свойстве potions будет массив[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 }]
 
 
 
@@ -2183,25 +2256,30 @@
 
 // Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив чисел numbers, а создавала, наполняла и возвращала новый массив с обновлёнными значениями.
 
-function changeEven(numbers, value) {
-    // Change code below this line
-    const newArray = [...numbers];
-    console.log("newArray", newArray);
-    numbers.forEach(number){
-        if (number % 2 === 0) {
-            number = number + value;
-        }
-    }
+// function changeEven(numbers, value) {
+//     // Change code below this line
+//     let newArray = []
+//     newArray = numbers.map(number => {
+//         // console.log("до if", number);
+//         if (number % 2 === 0) {
+//             number = number + value;
+//             // console.log("в цикле", number);
+//             newArray.push(number);
+//             // console.log("newArray в цикле", newArray);
 
-    console.log("newArray", newArray);
-    console.log('numbers', numbers);
-    // Change code above this line
-}
+//         } else { newArray.push(number) };
+//         // console.log(newArray);
+//         console.log("newArray end", newArray);
+
+//     })
+//     console.log('numbers', numbers);
+//     // Change code above this line
+// }
 
 // Объявлена функция changeEven(numbers, value)
 // Функция changeEven не изменяет значение параметра numbers
-changeEven([1, 2, 3, 4, 5], 10) // возвращает новый массив[1, 12, 3, 14, 5]
+// changeEven([1, 2, 3, 4, 5], 10); // возвращает новый массив[1, 12, 3, 14, 5]
 // changeEven([2, 8, 3, 7, 4, 6], 10) // возвращает новый массив[12, 18, 3, 7, 14, 16]
 // changeEven([17, 24, 68, 31, 42], 100) // возвращает новый массив[17, 124, 168, 31, 142]
 // changeEven([44, 13, 81, 92, 36, 54], 100) // возвращает новый массив[144, 13, 81, 192, 136, 154]
-// // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
