@@ -2430,97 +2430,111 @@
 // Для перебора массива books используется метод flatMap()
 
 
-// Модуль 4. Задача 16
+// Модуль 4. Задача 17
 
 // Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
-[
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    skills: ["ipsum", "lorem"],
-    gender: "male",
-    age: 37,
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
-    gender: "female",
-    age: 34,
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
-    gender: "male",
-    age: 24,
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    skills: ["adipisicing", "irure", "velit"],
-    gender: "female",
-    age: 21,
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong"],
-    isActive: true,
-    balance: 3951,
-    skills: ["ex", "culpa", "nostrud"],
-    gender: "male",
-    age: 27,
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman"],
-    isActive: false,
-    balance: 1498,
-    skills: ["non", "amet", "ipsum"],
-    gender: "male",
-    age: 38,
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    skills: ["lorem", "veniam", "culpa"],
-    gender: "female",
-    age: 39,
-  },
-];
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
 
 // // Условие:
-// // Change code below this line
+// Change code below this line
 // const getUserNames = users => {
-    
-
 //   };
-//   // Change code above this line
+  // Change code above this line
 
+
+// Решение (вариант 1):
+// Change code below this line
+// const getUserNames = users => users.map(user => user.name);
+  // Change code above this line
+
+// Решение (вариант 2):
+  // Change code below this line
+// const getUserNames = users => { return users.map(user=> user.name);
+// };
+  // Change code above this line
+
+  // Решение 3 (VSC):
+//   const getUserNames = users.map(user => user.name);
+// console.log(getUserNames);
+  
 // Объявлена переменная getUserNames
 
 // Переменной getUserNames присвоена стрелочная функция с параметром (users).
@@ -2530,3 +2544,597 @@
 // Вызов функции с указанным массивом пользователей возвращает массив ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
 
 // Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 18
+
+// Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива объектов в параметре users.
+
+// // Условие:
+// // Change code below this line
+// const getUserEmails = users => {
+//   };
+//   // Change code above this line
+
+// Решение:
+// Change code below this line
+// const getUserEmails = users => { return users.map(user=>user.email);
+  // };
+  // Change code above this line
+
+// Объявлена переменная getUserNames
+// Переменной getUserNames присвоена стрелочная функция с параметром (users)
+// Для перебора параметра users используется метод map()
+// Вызов функции с указанным массивом пользователей возвращает массив ["moorehensley@indexia.com", "sharlenebush@tubesys.com", "rossvazquez@xinware.com", "elmahead@omatom.com", "careybarr@nurali.com", "blackburndotson@furnigeer.com", "shereeanthony@kog.com"]
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 19
+
+// Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных. Обязательно используй метод filter().
+
+// // Условие:
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// // Change code below this line
+// const evenNumbers = numbers;
+// const oddNumbers = numbers;
+
+// // Решение:
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// // Change code below this line
+// const evenNumbers = numbers.filter(number => {if (number%2===0) return number});
+// const oddNumbers = numbers.filter(number =>{if (number%2!==0) return number});
+
+// Объявлена переменная numbers
+// Значение переменной numbers это массив [17, 24, 82, 61, 36, 18, 47, 52, 73]
+// Объявлена переменная evenNumbers
+// Значение переменной evenNumbers это массив [24, 82, 36, 18, 52]
+// Объявлена переменная oddNumbers
+// Значение переменной oddNumbers это массив [17, 61, 47, 73]
+// Для перебора массива numbers использован метод filter()
+
+
+// Модуль 4. Задача 20
+
+// Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction", "mysticism"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism", "adventure"],
+//   },
+// ];
+
+// // Решение:
+// // Change code below this line
+// const allGenres = books.flatMap(book => book.genres);
+// console.log(allGenres);
+// const uniqueGenres = allGenres.filter((genre, index, array) => array.indexOf(genre) === index);
+// console.log(uniqueGenres);
+
+// Объявлена переменная books
+// Значение переменной books это массив объектов
+// Объявлена переменная allGenres
+// Значение переменной allGenres это массив ["adventure", "history", "fiction", "mysticism", "horror", "mysticism", "adventure"]
+// Объявлена переменная uniqueGenres
+// Значение переменной uniqueGenres это массив ["adventure", "history", "fiction", "mysticism", "horror"]
+// Для вычисления значения переменной allGenders использован метод flatMap()
+// Для вычисления значения переменной uniqueGenres использован метод filter()
+
+
+// Модуль 4. Задача 21
+
+// Используя метод filter() дополни код так, чтобы:
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+// // Change code below this line
+
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// console.log(topRatedBooks);
+// const booksByAuthor = books.filter(book=>book.author === AUTHOR);
+// console.log(booksByAuthor);
+
+
+// В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating) больше либо равно значению переменной MIN_RATING.
+// В переменной booksByAuthor получился массив книг написанных автором с именем (свойство author) которое совпадает со значением в переменной AUTHOR.
+// Объявлена переменная books
+// Значение переменной books это массив объектов
+// Объявлена переменная MIN_RATING
+// Значение переменной MIN_RATING это число 8
+// Объявлена переменная AUTHOR
+// Значение переменной AUTHOR это строка "Bernard Cornwell"
+// Объявлена переменная topRatedBooks
+// Значение переменной topRatedBooks это массив книг с рейтингов выше 8
+// Объявлена переменная booksByAuthor
+// Значение переменной booksByAuthor это массив книг автор которых "Bernard Cornwell"
+// Для перебора массива books использован метод filter()
+
+
+// Модуль 4. Задача 22
+
+// Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) совпадает со значением параметра color.
+
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ]
+
+// // Условие:
+// // Change code below this line
+// const getUsersWithEyeColor = (users, color) => {
+//  };
+// // Change code above this line
+
+// // Решение:
+// // Change code below this line
+// const getUsersWithEyeColor = (users, color) => {return users.filter(user=>user.eyeColor === color);
+// };
+// Change code above this line
+
+// Объявлена переменная getUsersWithEyeColor
+// Переменной getUsersWithEyeColor присвоена стрелочная функция с параметрами (users, color)
+// Для перебора параметра users используется метод filter()
+// Если значение параметра color это "blue", функция возвращает массив объектов пользователей с именами Moore Hensley, Sharlene Bush и Carey Barr
+// Если значение параметра color это "green", функция возвращает массив объектов пользователей с именами Ross Vazquez и Elma Head
+// Если значение параметра color это "brown", функция возвращает массив объектов пользователей с именами Blackburn Dotson и Sheree Anthony
+// Если значение параметра color это любая другая строка, функция возвращает пустой массив
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 23
+
+// Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей, возраст которых (свойство age) попадает в промежуток от minAge до maxAge.
+
+// // Change code below this line
+// const getUsersWithAge = (users, minAge, maxAge) => {
+// };
+// // Change code above this line
+
+// // Решение:
+
+// // Change code below this line
+// const getUsersWithAge = (users, minAge, maxAge) => { return users.filter(user=>user.age>minAge && user.age<maxAge);
+// };
+// // Change code above this line
+
+// Объявлена переменная getUsersWithAge
+// Переменной getUsersWithAge присвоена стрелочная функция с параметрами (users, minAge, maxAge)
+// Для перебора параметра users используется метод filter()
+// Если значение параметров minAge и maxAge равны 20 и 30 соотвественно, функция возвращает массив объектов пользователей с именами Ross Vazquez, Elma Head и Carey Barr
+// Если значение параметров minAge и maxAge равны 30 и 40 соотвественно, функция возвращает массив объектов пользователей с именами Moore Hensley, Sharlene Bush, Blackburn Dotson, Sheree Anthony
+// Если значение параметров minAge и maxAge равны 80 и 100 соотвественно, функция возвращает пустой массив
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 24
+
+// Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName.Массив друзей пользователя хранится в свойстве friends.
+
+//Условие:
+// Change code below this line
+// const getUsersWithFriend = (users, friendName) => {
+// };
+// Change code above this line
+
+// Решение:
+
+// Change code below this line
+// const getUsersWithFriend = (users, friendName) => { return users.filter(user=>user.friends.includes(friendName));
+// };
+// Change code above this line
+
+
+// Объявлена переменная getUsersWithFriend
+// Переменной getUsersWithFriend присвоена стрелочная функция с параметрами (users, friendName)
+// Для перебора параметра users используется метод filter()
+// Если значение параметра friendName это строка "Briana Decker", функция возвращает массив объектов пользователей с именами Sharlene Bush и Sheree Anthony
+// Если значение параметра friendName это строка "Goldie Gentry", функция возвращает массив объектов пользователей с именами Elma Head и Sheree Anthony
+// Если значение параметра friendName это строка "Adrian Cross", функция возвращает пустой массив
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 25
+
+// Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
+
+// // Условие:
+// // Change code below this line
+// const getFriends = (users) => {
+// };
+// // Change code above this line
+
+// Решение:
+
+// // Change code below this line
+// const getFriends = (users) => { return users.flatMap(user=>user.friends).filter((friend, index, array)=> array.indexOf(friend)===index);
+// };
+// // Change code above this line
+
+
+// Объявлена переменная getFriends
+// Переменной getFriends присвоена стрелочная функция с параметром (users)
+// Вызов функции с указанным массивом пользователей возвращает массив ["Sharron Pace", "Briana Decker", "Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner", "Goldie Gentry", "Aisha Tran", "Jordan Sampson", "Eddie Strong", "Jacklyn Lucas", "Linda Chapman"]
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 26
+
+// Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.
+
+// //Условие:
+
+// // Change code below this line
+// const getActiveUsers = (users) => {
+// };
+// // Change code above this line
+
+// //Решение:
+
+// // Change code below this line
+// const getActiveUsers = (users) => { return users.filter(user=>user.isActive);
+// };
+// // Change code above this line
+
+
+// Объявлена переменная getActiveUsers Переменной getActiveUsers присвоена стрелочная функция с параметром users
+// Для перебора параметра users используется метод filter()
+// Вызов функции с указанным массивом пользователей возвращает массив объектов пользователей с именами Sharlene Bush, Elma Head, Carey Barr и Sheree Anthony
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 27
+
+// Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей, значение свойства isActive которых false.
+
+// //Условие:
+  
+// // Change code below this line
+// const getInactiveUsers = (users) => {
+// };
+// // Change code above this line
+
+// //Решение:
+
+// // Change code below this line
+// const getInactiveUsers = (users) => {return users.filter(user=>!user.isActive);
+// };
+// // Change code above this line
+
+
+// -Объявлена переменная getInactiveUsers.
+
+// Переменной getInactiveUsers присвоена стрелочная функция с параметром users
+// Для перебора параметра users используется метод filter()
+// Вызов функции с указанным массивом пользователей возвращает массив объектов пользователей с именами Moore Hensley, Ross Vazquez и Blackburn Dotson
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 28
+
+// Условие:
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+// const AUTHOR = 'Robert Sheckley';
+// // Change code below this line
+
+// const bookWithTitle = books;
+// const bookByAuthor = books;
+
+// Используя метод find() дополни код так, чтобы:
+
+// В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает со значением переменной BOOK_TITLE.
+// В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со значением переменной AUTHOR.
+// Объявлена переменная books
+// Значение переменной books это массив
+// Объявлена переменная BOOK_TITLE
+// Значение переменной BOOK_TITLE это строка "The Dream of a Ridiculous Man"
+// Объявлена переменная AUTHOR
+// Значение переменной AUTHOR это строка "Robert Sheckley"
+// Объявлена переменная bookWithTitle
+// Значение переменной bookWithTitle это объект книги с названием выше "The Dream of a Ridiculous Man"
+// Объявлена переменная bookByAuthor
+// Значение переменной bookByAuthor это объект книги автора "Robert Sheckley"
+// Для перебора массива books использован метод find()
+
+// // Решение:
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+// const AUTHOR = 'Robert Sheckley';
+// // Change code below this line
+
+// const bookWithTitle = books.find(book=>book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book=>book.author === AUTHOR);
+
+
+// Модуль 4. Задача 29
+
+const users =[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+
+// Дополни функцию getUserWithEmail(users, email) так, чтобы она возвращала объект пользователя, почта которого (свойство email) совпадает со значением параметра email.
+
+// // Условие:
+
+// // Change code below this line
+// const getUserWithEmail = (users, email) => {
+// };
+// // Change code above this line
+
+// //Решение:
+
+// // Change code below this line
+// const getUserWithEmail = (users, email) => {    return users.find(user=>user.email === email)
+// };
+// // Change code above this line
+
+
+// Объявлена функция getUserWithEmail(users, email)
+
+// Для перебора параметра users используется метод find()
+
+// Если значение параметра email это "shereeanthony@kog.com", функция возвращает объект пользователя с именем Sheree Anthony
+
+// Если значение параметра email это "elmahead@omatom.com", функция возвращает объект пользователя с именем Elma Head
+
+// Если значение параметра email это "blackburndotson@furnigeer.com", функция возвращает объект пользователя с именем Blackburn Dotson
+
+// Если в массиве users нет пользователя с почтой из параметра email, функция возвращает undefined
+
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// Модуль 4. Задача 30
+
+// Условие:
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Change code below this line
+
+// const eachElementInFirstIsEven = firstArray;
+// const eachElementInFirstIsOdd = firstArray;
+
+// const eachElementInSecondIsEven = secondArray;
+// const eachElementInSecondIsOdd = secondArray;
+
+// const eachElementInThirdIsEven = thirdArray;
+// const eachElementInThirdIsOdd = thirdArray;
+
+// Используя метод every() дополни код так, чтобы:
+
+// В переменной eachElementInFirstIsEven был результат проверки всех элементов массива firstArray на чётность.
+// В переменной eachElementInFirstIsOdd был результат проверки всех элементов массива firstArray на нечётность.
+// В переменной eachElementInSecondIsEven был результат проверки всех элементов массива secondArray на чётность.
+// В переменной eachElementInSecondIsOdd был результат проверки всех элементов массива secondArray на нечётность.
+// В переменной eachElementInThirdIsEven был результат проверки всех элементов массива thirdArray на чётность.
+// В переменной eachElementInThirdIsOdd был результат проверки всех элементов массива thirdArray на нечётность.
+// Объявлена переменная firstArray
+// Значение переменной firstArray это массив [26, 94, 36, 18]
+// Объявлена переменная secondArray
+// Значение переменной secondArray это массив [17, 61, 23]
+// Объявлена переменная thirdArray
+// Значение переменной thirdArray это массив [17, 26, 94, 61, 36, 23, 18]
+// Объявлена переменная eachElementInFirstIsEven
+// Значение переменной eachElementInFirstIsEven это буль true
+// Объявлена переменная eachElementInFirstIsOdd
+// Значение переменной eachElementInFirstIsOdd это буль false
+// Объявлена переменная eachElementInSecondIsEven
+// Значение переменной eachElementInSecondIsEven это буль false
+// Объявлена переменная eachElementInSecondIsOdd
+// Значение переменной eachElementInSecondIsOdd это буль true
+// Объявлена переменная eachElementInThirdIsEven
+// Значение переменной eachElementInThirdIsEven это буль false
+// Объявлена переменная eachElementInThirdIsOdd
+// Значение переменной eachElementInThirdIsOdd это буль false
+// Для перебора массивов использован метод every()
+
+// // Решение:
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Change code below this line
+
+// const eachElementInFirstIsEven = firstArray.every(number=>number%2===0);
+// const eachElementInFirstIsOdd = firstArray.every(number=>number%2!==0);
+
+// const eachElementInSecondIsEven = secondArray.every(number=>number%2===0);
+// const eachElementInSecondIsOdd = secondArray.every(number=>number%2!==0);
+
+// const eachElementInThirdIsEven = thirdArray.every(number=>number%2===0);
+// const eachElementInThirdIsOdd = thirdArray.every(number=>number%2!==0);
+
+
+// Модуль 4. Задача 31
