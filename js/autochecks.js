@@ -4050,3 +4050,313 @@
 
 // Модуль 5. Задача 4
 
+// Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild.
+
+// // Условие:
+
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const child = {};
+
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
+
+// // Решение:
+
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// console.log(parent);
+// // Change code below this line
+
+// const child = Object.create(parent);
+
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
+
+// Объявлена переменная parent
+// Значение переменной parent это объект
+// Вызов parent.hasOwnProperty("surname") возвращает true
+// Вызов parent.hasOwnProperty("heritage") возвращает true
+// Объявлена переменная child
+// Значение переменной child это объект
+// Вызов child.hasOwnProperty("name") возвращает true
+// Обращение к child.name возвращает "Jason"
+// Вызов child.hasOwnProperty("age") возвращает true
+// Обращение к child.age возвращает 27
+// Вызов child.hasOwnProperty("surname") возвращает false
+// Обращение к child.surname возвращает "Moore"
+// Вызов child.hasOwnProperty("heritage") возвращает false
+// Обращение к child.heritage возвращает "Irish"
+// Вызов parent.isPrototypeOf(child) возвращает true
+// Используется метод Object.create()
+
+
+// Модуль 5. Задача 5
+
+// Измени код, построив цепочку прототипов так, чтобы объект ancestor был прототипом для parent, а тот в свою очередь был прототипом для child.
+
+// // Условие:
+
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const parent = {};
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
+
+// const child = {};
+// child.name = "Jason";
+// child.age = 27;
+
+// // Change code above this line
+
+// Решение:
+
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const parent = Object.create(ancestor);
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
+
+// const child = Object.create(parent) ;
+// child.name = "Jason";
+// child.age = 27;
+
+// // Change code above this line
+
+
+// Объявлена переменная ancestor
+// Значение переменной ancestor это объект.
+// Объявлена переменная parent
+// Значение переменной parent это объект.
+// Объявлена переменная child
+// Значение переменной child это объект.
+// Вызов ancestor.isPrototypeOf("parent") возвращает true
+// Вызов parent.isPrototypeOf("child") возвращает true
+// Вызов ancestor.hasOwnProperty("surname") возвращает true
+// Обращение к ancestor.surname возвращает "Dawson"
+// Вызов parent.hasOwnProperty("surname") возвращает true
+// Обращение к parent.surname возвращает "Moore"
+// Вызов child.hasOwnProperty("surname") возвращает false
+// Обращение к child.surname возвращает "Moore"
+// Вызов ancestor.hasOwnProperty("heritage") возвращает true
+// Обращение к ancestor.heritage возвращает "Irish"
+// Вызов parent.hasOwnProperty("heritage") возвращает false
+// Обращение к parent.heritage возвращает "Irish"
+// Вызов child.hasOwnProperty("heritage") возвращает false
+// Обращение к child.heritage возвращает "Irish"
+// Используется метод Object.create()
+
+
+// Модуль 5. Задача 6
+
+// Используя ключевое слово class объяви класс Car с пустым телом.
+
+// // Решение:
+
+// class Car {};
+
+// Объявлен класс Car
+// Результат вызова new Car() это пустой объект
+
+
+// Модуль 5. Задача 7
+
+// Добавь классу Car метод constructor который принимает три параметра:
+// brand - марка автомобиля.
+// model - модель автомобиля.
+// price - цена автомобиля.
+
+// // Условие:
+
+// class Car {
+//   // Change code below this line
+//   // Change code above this line
+// }
+
+// Класс Car должен создавать объект с одноимёнными свойствами brand, model и price, значениями которых должны быть переданные аргументы во время её вызова с оператором new.
+
+// // Решение:
+
+//   class Car {
+//   // Change code below this line
+//   constructor(brand, model, price){
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// Объявлен класс Car
+// У класса Car есть метод constructor
+// В результате вызова new Car("Audi", "Q3", 36000) получится объект { brand: "Audi", model: "Q3", price: 36000 }
+// В результате вызова new Car("BMW", "X5", 58900) получится объект { brand: "BMW", model: "X5", price: 58900 }
+// В результате вызова new Car("Nissan","Murano", 31700) получится объект { brand: "Nissan", model: "Murano", price: 31700 }
+
+
+// Модуль 5. Задача 8
+
+// Выполни рефакторинг класса Car так, чтобы он принимал один параметр - объект со свойсвами brand, model и price. Деструктуризируй объект в сигнатуре (подписи) конструктора.
+
+// // Условие:
+
+// class Car {
+//   // Change code below this line
+//   constructor(brand, model, price) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// // Решение:
+
+// class Car {
+//   // Change code below this line
+//   constructor({brand, model, price}) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// // Объявлен класс Car
+// // У класса Car есть метод constructor
+// const car1 = new Car({ brand: "Audi", model: "Q3", price: 36000 }) //получится объект { brand: "Audi", model: "Q3", price: 36000 }
+// console.log(car1);
+// const car2 = new Car({ brand: "BMW", model: "X5", price: 58900 }) //получится объект { brand: "BMW", model: "X5", price: 58900 }
+// console.log(car2);
+// const car3 = new Car({ brand: "Nissan", model: "Murano", price: 31700 }) // получится объект { brand: "Nissan", model: "Murano", price: 31700 }
+// console.log(car3);
+
+
+// Модуль 5. Задача 9
+
+// Условие:
+
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+//   // Change code above this line
+// }
+
+// Решение:
+
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+//   getPrice(){
+//     return this.price;
+//   }
+//   changePrice(newPrice){
+//     this.price = newPrice;
+//   }
+//   // Change code above this line
+// }
+
+// Добавь классу Car два метода:
+// getPrice() - возвращает значение свойства price из объекта который его будет вызывать,
+// changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+// В классе Car объявлен метод getPrice
+// Метод getPrice возвращает значение свойства price экземпляра класса который его вызывает
+// В классе Car объявлен метод changePrice
+// Метод changePrice изменяет значение свойства price экземпляра класса который его вызывает
+
+
+// Модуль 5. Задача 10
+
+// Условие:
+
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// Напиши класс Storage, который будет создавать объекты для управления складом товаров. Класс ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
+
+// Объяви следующие методы класса:
+// getItems() - возвращает массив текущих товаров в свойстве items объекта который вызывает этот метод.
+// addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве items объекта который вызывает этот метод.
+// removeItem(itemToRemove) - принимает товар itemToRemove и удаляет его из массива товаров в свойстве items объекта который вызывает этот метод.
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+//Решение:
+
+class Storage {
+    constructor(items){
+        this.items = items;
+    }
+    getItems(){
+        return this.items;
+    }
+    addItem(newItem){
+        this.items.push(newItem);
+    }
+    removeItem(itemToRemove){
+        this.items.filter(item => item !== itemToRemove);
+    }
+}
+
+// Change code above this line
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+
+// Объявлен класс Storage
+// В классе Storage объявлен метод getItems
+// В классе Storage объявлен метод addItem
+// В классе Storage объявлен метод removeItem
+// Метод getItems возвращает значение свойства items экземпляра класса который его вызывает
+// Метод addItem изменяет свойство items экземпляра класса который его вызывает
+// Метод removeItem изменяет свойство items экземпляра класса который его вызывает
+// В результате вызова new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значение переменной storage это объект
+// У объекта storage есть свойство items
+// Первый вызов storage.getItems(), сразу после инциализации экземпляра, возвращает массив ["Nanitoids", "Prolonger", "Antigravitator"]
+// Второй вызов, storage.getItems(), после вызова storage.addItem("Droid"), возвращает массив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// Третий вызов storage.getItems(), после вызова storage.removeItem("Prolonger"), возвращает массив ["Nanitoids", "Antigravitator", "Droid"]
+
+
+// Модуль 5. Задача 11
