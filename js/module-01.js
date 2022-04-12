@@ -81,18 +81,24 @@
 
 // // Просим клиента подтвердить бронь на отель
 // // и сохраняем в переменную результат работы confirm
+
 // const isComing = confirm("Please confirm hotel reservation");
 // console.log(isComing);
+
 // prompt() - выводит модальное окно с полем ввода и кнопками Ok и Cancel. При нажатии Ok, результатом будет то, что ввел пользователь, при Cancel - возвращается null.
 
 // // Спрашиваем имя отеля в котором хотел бы остановится клиент
 // // и сохраняем в переменную результат вызова prompt.
+
 // const hotelName = prompt("Please enter desired hotel name");
-// console.log(hotelName);
-// console.log(typeof hotelName);
-// console.log(Number(hotelName));
-// let modifyHotelName = Number(hotelName);
-// console.log(typeof modifyHotelName)
+// console.log("hotelName -", hotelName);
+// const roomNumber = prompt("Please enter desired number of room");
+// console.log("roomNumber:", roomNumber);
+// console.log("исходный тип roomNumber -", typeof roomNumber);
+// console.log("roomNumber, преобразованный с помощью Number -", Number(roomNumber));
+// let modifyHotelName = Number(roomNumber);
+// console.log("тип modifyHotelName -", typeof modifyHotelName)
+
 // Важная особенность prompt в том, что не зависимо что ввел пользователь, всегда вернется строка. То есть, если пользователь ввел 5, то вернется не число 5, а строка "5".
 
 // const value = prompt("Please enter a number!");
@@ -177,16 +183,20 @@
 // Если значение не возможно привести к числу, результатом будет специальное числовое значение NaN (Not a Number). Аналогичным образом происходит преобразование и в других математических операторах и функциях.
 
 // const valueA = "5";
-// console.log(Number(valueA)); // 5
-// console.log(typeof Number(valueA)); // "number"
-// console.log(typeof valueA);
+// console.log("valueA:", valueA);
+// console.log("тип valueA -", typeof valueA);
+// console.log("Number(valueA):", Number(valueA)); // 5
+// console.log("тип Number(valueA) -", typeof Number(valueA)); // "number"
 
 // const valueB = "random string";
-// console.log(Number(valueB)); // NaN
-// console.log(typeof Number(valueB)); // "number"
-// console.log(typeof valueB);
+// console.log("valueB:", valueB);
+// console.log("тип valueB -", typeof valueB);
+// console.log("Number(valueB) -", Number(valueB)); // NaN
+// console.log("тип Number(valueB) -", typeof Number(valueB)); // "number"
+
 
 // Методы Number.parseInt() и Number.parseFloat()
+
 // Преобразуют строку символ за символом, пока это возможно. При возникновении ошибки возвращается число, которое получилось.
 
 // Метод Number.parseInt() парсит из строки целое число.
@@ -373,7 +383,9 @@
 // console.log(productName.slice(0, productName.length)); // "Repair droid"
 // console.log(productName.slice(7, productName.length)); // "droid"
 
+
 // Логические операторы
+
 // Приведение типов
 // Запомните 6 ложных (falsy) значений, приводящихся к false в логическом преобразовании: 0, NaN, null, undefined, пустая строка и false. Абсолютно все остальное приводится к true.
 
