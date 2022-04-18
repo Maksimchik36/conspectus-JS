@@ -12,12 +12,12 @@
 // console.log(diff)
 
 // Решение:
-// const apples = 47;
-// const grapes = 135;
+// const apples = 7;
+// const grapes = 15;
 // const total = apples + grapes;
-// console.log(total)
+// console.log("total", total)
 // const diff = grapes - apples;
-// console.log(diff)
+// console.log("diff", diff)
 
 // Example 2 - Комбинированные операторы
 // Замени выражение переопределения комбинированным оператором +=.
