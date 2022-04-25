@@ -1,0 +1,303 @@
+        //     Модуль 7 - Занятие 13 - Делегирование событий
+
+      
+//         Распространение событий
+
+// Распространение событий(event propagation) - это термин описывающий жизненный цикл события, который включает в себя три этапа: погружение, таргетинг и всплытие. На практике чаще всего используют только фазу всплытия.
+
+// При наступлении события, оно проходит через три обязательные фазы:
+
+// Capturing phase (погружение) - событие начинается на window и тонет (проходит через все элементы-предки) до самого глубокого целевого элемента на котором произошло действие, например клик.
+// Target phase (таргетинг) - событие дошло до целевого элемента. Этот этап включает только уведомление элемента о том, что на нём произошло действие.
+// Bubbling phase (всплытие) - заключительная фаза, событие всплывает от самого глубокого, целевого элемента, через все элементы-предки до window.
+
+// ИНТЕРЕСНО
+// Распространение часто неправильно используется как синоним стадии всплытия. Каждый раз, когда происходит событие, происходит его распространение.
+
+
+// Всплытие событий
+
+// При наступлении события, обработчики сначала срабатывают на самом вложенном элементе, затем на его родителе, затем выше и так далее, вверх по цепочке вложенности. Этот процесс называется всплытием (event bubbling), потому что события «всплывают» от внутреннего элемента вверх через всех предков до window, подобно тому, как всплывает пузырек воздуха в воде.
+
+// Рассмотрим пример, так будет понятнее. Есть три вложенных тега <div> с обработчиками клика на каждом из них.
+
+// Всплытие гарантирует, что клик по #descendant вызовет обработчик клика, если он есть, сначала на самом #descendant, затем на элементе #child, далее на элементе #parent и так далее вверх по цепочке предков до window. Поэтому, если в примере кликнуть на #descendant, то последовательно выведутся alert для descendant → child → parent.
+
+// // Добавить во вкладку HTML
+// <div id="parent">
+//   Parent
+//   <div id="child">
+//     Child
+//     <div id="descendant">Descendant</div>
+//   </div>
+// </div>
+
+// Добавить во вкладку CSS
+// #parent,
+// #child,
+// #descendant {
+//   margin: 16px;
+//   padding: 16px;
+//   border: 4px solid #212121;
+//   border-radius: 8px;
+//   color: #fff;
+//   font-weight: 500;
+//   font-size: 20px;
+//   text-transform: uppercase;
+// }
+
+// #parent {
+//   background-color: #673ab7;
+// }
+
+// #child {
+//   background-color: #448aff;
+// }
+
+// #descendant {
+//   background-color: #ff9800;
+// }
+
+// // Добавить во вкладку JS
+// const parent = document.querySelector("#parent");
+// const child = document.querySelector("#child");
+// const descendant = document.querySelector("#descendant");
+
+// parent.addEventListener("click", () => {
+//   alert("Parent click handler");
+// });
+
+// child.addEventListener("click", () => {
+//   alert("Child click handler");
+// });
+
+// descendant.addEventListener("click", () => {
+//   alert("Descendant click handler");
+// });
+
+// ИНТЕРЕСНО
+// Всплывают почти все события, например события focus и blur не всплывают, поэтому существуют их всплывающие аналоги - focusin и focusout.
+
+
+// Свойство event.target
+
+// Не зависимо от того где мы поймали событие во время его всплытия, всегда можно узнать где конкретно оно произошло. Самый глубокий элемент, который вызывает событие, называется целевым или исходным и доступен как event.target.
+
+// event.target - это ссылка на исходный элемент на котором произошло событие, в процессе всплытия он неизменен.
+// event.currentTarget - это ссылка текущий элемент до которого дошло всплытие, на нём сейчас выполняется обработчик события.
+// Если слушатель события зарегистрирован на самом верхнем элементе, то он «поймает» все клики внутри, потому что события будут всплывать до этого элемента. Откройте консоль в примере и покликайте, event.target это всегда исходный (и самый глубокий) элемент на котором был сделан клик, а event.currentTarget не меняется.
+
+// // // Добавить во вкладку HTML
+// <div id="parent">
+//   Parent
+//   <div id="child">
+//     Child
+//     <div id="descendant">Descendant</div>
+//   </div>
+// </div>
+
+// // // Добавить во вкладку CSS
+// #parent,
+// #child,
+// #descendant {
+//   margin: 16px;
+//   padding: 16px;
+//   border: 4px solid #212121;
+//   border-radius: 8px;
+//   color: #fff;
+//   font-weight: 500;
+//   font-size: 20px;
+//   text-transform: uppercase;
+// }
+
+// #parent {
+//   background-color: #673ab7;
+// }
+
+// #child {
+//   background-color: #448aff;
+// }
+
+// #descendant {
+//   background-color: #ff9800;
+// }
+
+// // // Добавить во вкладку JS
+// const parent = document.querySelector("#parent");
+
+// parent.addEventListener("click", (event) => {
+//   console.log("event.target: ", event.target); // элемент, на котором происходит событие (на который мы "кликаем")
+//   console.log("event.currentTarget: ", event.currentTarget); // в данном примере всегда parent
+// });
+
+// Прекращение всплытия
+
+// Обычно событие будет всплывать наверх до элемента window, вызывая все обработчики на своем пути. Но любой промежуточный обработчик может решить, что событие полностью обработано и остановить всплытие вызвав метод stopPropagation().
+
+//  // Добавить во вкладку HTML
+// <div id="parent">
+//   Parent
+//   <div id="child">
+//     Child
+//     <div id="descendant">Descendant</div>
+//   </div>
+// </div>
+
+// // // Добавить во вкладку CSS
+// #parent,
+// #child,
+// #descendant {
+//   margin: 16px;
+//   padding: 16px;
+//   border: 4px solid #212121;
+//   border-radius: 8px;
+//   color: #fff;
+//   font-weight: 500;
+//   font-size: 20px;
+//   text-transform: uppercase;
+// }
+
+// #parent {
+//   background-color: #673ab7;
+// }
+
+// #child {
+//   background-color: #448aff;
+// }
+
+// #descendant {
+//   background-color: #ff9800;
+// }
+
+// // // Добавить во вкладку JS
+// const parent = document.querySelector("#parent");
+// const child = document.querySelector("#child");
+// const descendant = document.querySelector("#descendant");
+
+// parent.addEventListener("click", () => {
+//   alert(
+//     "Parent click handler. This alert will not appear when clicking on Descendant, the event will not reach here!"
+//   );
+// });
+
+// child.addEventListener("click", () => {
+//   alert(
+//     "Child click handler. This alert will not appear when clicking on Descendant, the event will not reach here!"
+//   );
+// });
+
+// descendant.addEventListener("click", (event) => {
+//   event.stopPropagation();
+//   alert("Descendant click handler");
+// });
+
+// Если у элемента есть несколько обработчиков на одно событие, то даже при прекращении всплытия все они будут выполнены. То есть, метод stopPropagation() только препятствует продвижению события дальше. Если необходимо полностью остановить обработку события, используется метод stopImmediatePropagation(). Он не только предотвращает всплытие, но и останавливает обработку событий на текущем элементе.
+
+// ИНТЕРЕСНО
+// Не прекращайте всплытие без необходимости. Прекращение всплытия создаёт свои подводные камни, которые потом приходится обходить. Например, аналитика использует всплытие чтобы отслеживать события на странице.
+
+
+// Делегирование событий
+
+// Всплытие позволяет реализовать один из самых полезных приёмов - делегирование событий (event delegation). Он заключается в том, что если есть группа элементов, события которых нужно обрабатывать одинаково, то добавляется один обработчик на их общего предка, вместо того чтобы добавлять обработчик каждому элементу. Используя свойство event.target можно получить ссылку на целевой элемент, понять на каком именно потомке произошло событие и обработать его.
+
+// Рассмотрим делегирование на примере. Создаем элемент <div>, добавляем в него произвольное количество кнопок, например 100, и регистриуем каждой из них слушателя события клика с функцией handleButtonClick .
+
+// Проблема в том, что у нас есть сто слушателей событий. Все они указывают на одну и ту же функцию слушателя, но самих слушателей 100. Что если мы переместим всех слушателей на общего предка, элемент <div>?
+
+// Теперь есть только один обработчик события клика и браузеру не нужно хранить в памяти сто различных слушателей. То есть делегирование сводится к трём простым шагам.
+
+// 1. Определить общего предка группы элементов для отслеживания событий.
+// 2. Зарегистрировать на элементе-предке обработчик события которое мы хотим отлавливать от группы элементов.
+// 3. В обработчике использовать event.target для выбора целевого элемента.
+
+// Такой подход упрощает инициализацию слушателей однотипных элементов. Можно добавлять, удалять или изменять элементы, при этом не нужно вручную добавлять или удалять обработчики событий.
+
+
+// Палитра цветов
+
+// Будем делать палитру цветов с возможностью выбрать цвет при клике и отображением выбранного цвета. Вместо того, чтобы назначать обработчик каждому элементу палитры, которых может быть очень много, повесим один слушатель на общего предка div.color-palette. В обработчике события клика используем event.target, чтобы получить элемент на котором произошло событие и связанный с ним цвет, который будем хранить в атрибуте data-color.
+
+// // // // Добавить во вкладку HTML
+// <p class="output">Selected color: -</p>
+// <div class="color-palette"></div>
+
+// // // // Добавить во вкладку CSS
+// body {
+//   margin: 8px;
+//   font-family: sans-serif;
+// }
+
+// .output {
+//   text-align: center;
+//   text-transform: uppercase;
+//   font-size: 24px;
+//   font-weight: 700;
+// }
+
+// .color-palette {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+//   gap: 4px;
+// }
+
+// .color-palette .item {
+//   padding: 0;
+//   margin: 0;
+//   border: none;
+//   border-radius: 4px;
+//   width: 40px;
+//   height: 40px;
+//   cursor: pointer;
+//   transition: transform 250ms ease-in-out;
+// }
+
+// .color-palette .item:hover {
+//   transform: scale(1.1);
+
+// // // // Добавить во вкладку JS
+// const colorPalette = document.querySelector(".color-palette");
+// const output = document.querySelector(".output");
+
+// colorPalette.addEventListener("click", selectColor);
+
+// // This is where delegation «magic» happens
+// function selectColor(event) {
+//   if (event.target.nodeName !== "BUTTON") {
+//     return;
+//   }
+
+//   const selectedColor = event.target.dataset.color;
+//   output.textContent = `Selected color: ${selectedColor}`;
+//   output.style.color = selectedColor;
+// }
+
+// // Some helper functions to render palette items
+// createPaletteItems();
+
+// function createPaletteItems() {
+//   const items = [];
+//   for (let i = 0; i < 60; i++) {
+//     const color = getRangomColor();
+//     const item = document.createElement("button");
+//     item.type = "button";
+//     item.dataset.color = color;
+//     item.style.backgroundColor = color;
+//     item.classList.add("item");
+//     items.push(item);
+//   }
+//   colorPalette.append(...items);
+// }
+
+// function getRangomColor() {
+//   return `#${getRandomHex()}${getRandomHex()}${getRandomHex()}`;
+// }
+
+// function getRandomHex() {
+//   return Math.round(Math.random() * 256)
+//     .toString(16)
+//     .padStart(2, "0");
+// }
+
+// ИНТЕРЕСНО
+// Обязательно проверяем цель клика, чтобы это точно была кнопка, мы не хотим обрабатывать клики в элемент-контейнер. Для проверки типа элемента используем свойство nodeName.
