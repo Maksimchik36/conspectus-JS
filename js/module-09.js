@@ -97,7 +97,7 @@
 //   }, 2000);
 // };
 
-// // Two seconds after clicking the button, 
+// // Two seconds after clicking the button,
 // // alert specified inside the setTimeout callback will appear.
 // button.addEventListener("click", onClick);
 
@@ -181,17 +181,17 @@
 
 // Установка времени в виде строк внутренне вызывает метод Date.parse(), который преобразует строку в число - количество миллисекунд. Именно поэтому формат передаваемой строки очень гибкий. Например, можно не указывать ноль для дней и месяца. Рассмотрим несколько примеров, которые приведут к одинаковому результату.
 
-// console.log("2030-03-16 -", new Date("2030-03-16")); 
-// console.log("2030-03 -", new Date("2030-03"));
-// console.log("2030 -", new Date("2030"));
-// console.log("03/16/2030 -", new Date("03/16/2030"));
-// console.log("2030/03/16 -", new Date("2030/03/16"));
-// console.log("2030/3/16 -", new Date("2030/3/16"));
-// console.log("March 16, 2030 -", new Date("March 16, 2030"));
-// console.log("March 16, 2030 14:25:00 -", new Date("March 16, 2030 14:25:00"));
-// console.log("2030-03-16 14:25:00 -", new Date("2030-03-16 14:25:00"));
-// console.log("2030-03-16T14:25:00 -", new Date("2030-03-16T14:25:00"));
-// console.log("16 March 2030 -", new Date("16 March 2030"));
+// console.log("2030-03-16 - ", new Date("2030-03-16"));
+// console.log("2030-03 - ", new Date("2030-03"));
+// console.log("2030 - ", new Date("2030"));
+// console.log("03/16/2030 - ", new Date("03/16/2030"));
+// console.log("2030/03/16 - ", new Date("2030/03/16"));
+// console.log("2030/3/16 - ", new Date("2030/3/16"));
+// console.log("March 16, 2030 - ", new Date("March 16, 2030"));
+// console.log("March 16, 2030 14:25:00 - ", new Date("March 16, 2030 14:25:00"));
+// console.log("2030-03-16 14:25:00 - ", new Date("2030-03-16 14:25:00"));
+// console.log("2030-03-16T14:25:00 - ", new Date("2030-03-16T14:25:00"));
+// console.log("16 March 2030 - ", new Date("16 March 2030"));
 
 // Другой способ создания новых объектов - это передать семь чисел, которые описывают год, месяц (начинается с 0), день, часы, минуты, секунды и миллисекунды. Обязательны только первые три.
 
