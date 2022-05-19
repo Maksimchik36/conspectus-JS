@@ -354,7 +354,7 @@
 // resolve(value) - функция для вызова при успешной операции. Переданный ей аргумент будет значением выполненного промиса.
 // reject(error) - функция для вызвова в случае ошибки. Переданный ей аргумент будет значением отклоненного промиса.
 
-// // Change value of isSuccess variable to call resolve or reject
+// Change value of isSuccess variable to call resolve or reject
 // const isSuccess = true;
 
 // const promise = new Promise((resolve, reject) => {
@@ -366,6 +366,8 @@
 //     }
 //   }, 2000);
 // });
+
+// console.log(promise);
 
 // В переменную promise будет записан промис (объект) в состоянии pending, а через две секунды, после того как будет вызван resolve() или reject(), промис перейдет в состояние fulfilled или rejected и мы сможем его обработать.
 
