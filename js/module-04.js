@@ -86,6 +86,7 @@
 // function processCall(recipient, onAvailable, onNotAvailable) {
 //     // Имитируем доступность абонента случайным числом
 //     const isRecipientAvailable = Math.random() > 0.5;
+//     console.log('isRecipientAvailable > 0.5', isRecipientAvailable);
 
 //     if (!isRecipientAvailable) {
 //         onNotAvailable(recipient);
@@ -538,6 +539,8 @@
 // indexOf() вернёт 0, потому что ищет первое совпадение.
 // Значение параметра index будет 3.
 // Они не равны, значит это повторяющийся - не уникальный элемент.
+
+
 // Массив объектов
 // При работе с массивом объектов выполняется фильтрация по значению какого - то свойства.В результате получается новый массив отфильтрованных объектов.
 
@@ -781,13 +784,13 @@
 // // // Пройдем по всем элементам коллекции и добавим значения свойства tags
 // // // к аккумулятору, начальное значение которого укажем пустым массивом [].
 // // // На каждой итерации пушим в аккумулятор все элементы tweet.tags и возвращаем его.
-// // const tags = tweets.reduce((allTags, tweet) => {
-// //     allTags.push(...tweet.tags);
+// const tags = tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
 
-// //     return allTags;
-// // }, []);
+//     return allTags;
+// }, []);
 
-// // console.log(tags);
+// console.log(tags); // ['js', 'nodejs', 'html', 'css', 'html', 'js', 'nodejs', 'css', 'react', 'js', 'nodejs', 'react']
 
 // // // Наверное сбор тегов не одиночная операция, поэтому напишем функцию
 // // // для сбора тегов из коллекции
@@ -799,7 +802,7 @@
 //         return allTags;
 //     }, []);
 
-// console.log(getTags(tweets));
+// console.log(getTags(tweets)); // ['js', 'nodejs', 'html', 'css', 'html', 'js', 'nodejs', 'css', 'react', 'js', 'nodejs', 'react']
 
 // После того, как мы собрали все теги из постов, хорошо бы было посчитать количество уникальных тегов в массиве.И снова reduce тут как тут.
 
@@ -819,7 +822,7 @@
 //     }, []);
 
 // const tags = getTags(tweets);
-// console.log(tags);
+// console.log("tags", tags); // ['js', 'nodejs', 'html', 'css', 'html', 'js', 'nodejs', 'css', 'react', 'js', 'nodejs', 'react']
 
 // // // Вынесем callback-функцию отдельно, а в reducе передадим ссылку на нее.
 // // // Это стандартная практика если callback-функция довольно большая.
@@ -828,21 +831,25 @@
 // // // то создаем его и записывает ему значение 0.
 // // // В противном случае увеличиваем значение на 1.
 
-// const getTagStats = (acc, tag) => {
-//     if (!acc.hasOwnProperty(tag)) {
-//         acc[tag] = 0;
+// const getTagStats = (acc, el) => {
+//     console.log("acc", acc);
+//     if (!acc.hasOwnProperty(el)) {
+//         acc[el] = 0;
+//         console.log(`Create new tag : ${el}. This tag's quantity = ${acc[el]}`);
 //     }
 
-//     acc[tag] += 1;
+//     acc[el] += 1;
+//     console.log(`Add tag : ${el}. This tag's quantity = ${acc[el]}`);
 
 //     return acc;
 // };
-
+// // // Необходимо раскомментировать строки с 809 по 824 - getTags, чтобы получить массив tags
 // // // Начальное значение аккумулятора это пустой объект {}
-// const countTags = tags => tags.reduce(getTagStats, {});
+// const countElements = elements => elements.reduce(getTagStats, {});
 
-// const tagCount = countTags(tags);
-// console.log(tagCount);
+// // console.log("countTags", countTags(tags));
+// const tagsQuantity = countElements(tags);
+// console.log("tagsQuantity", tagsQuantity); // {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
 
 
 // Метод sort()
@@ -877,9 +884,12 @@
 
 // const scores = [61, 19, 74, 35, 92, 56];
 // const ascendingScores = [...scores].sort();
+// const newArr = Array.from(scores); // более устаревший способ клонирования нового массива из уже имеющегося
 
-// console.log(scores); // [61, 19, 74, 35, 92, 56]
-// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// console.log("newArr", newArr);
+// console.log("scores", scores); // [61, 19, 74, 35, 92, 56]
+// console.log("ascendingScores", ascendingScores); // [19, 35, 56, 61, 74, 92]
+
 // Свой порядок сортировки чисел
 // Для указания своего порядка сортировки методу sort(compareFunction) нужно передать коллбек - функцию с двумя параметрами.Это функция сравнения(compare function), порядок сортировки зависит от её результата.Метод sort() будет вызывать её для произвольных двух элементов.
 

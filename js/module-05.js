@@ -250,11 +250,19 @@
 // const steamGreeter = greet.bind(steam);
 // steamGreeter("Манго"); // "Манго, добро пожаловать в «Steam»."
 
+// // без bind контекст отсутствует
+// const steamGreeterWithoutBind = greet(steam);
+// steamGreeterWithoutBind("Манго"); // "[object Object], добро пожаловать в «undefined»."
+
 // const gmail = {
 //   service: "Gmail",
 // };
 // const gmailGreeter = greet.bind(gmail);
 // gmailGreeter("Поли"); // "Поли, добро пожаловать в «Gmail»."
+
+// // без bind контекст отсутствует
+// const gmailGreeterWithoutBind = greet(gmail);
+// gmailGreeterWithoutBind("Поли"); // "[object Object], добро пожаловать в «undefined»."
 
 
 // bind() и методы объекта
@@ -274,7 +282,9 @@
 //   console.log(`Обрабатываем заявку от ${callback()}.`);
 // }
 
-// makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+// makeMessage(customer.getFullName); // Будет ошибка при вызове функции - Обрабатываем заявку от undefined undefined
+// makeMessage(customer.getFullName.bind(customer)); // Обрабатываем заявку от Jacob Mercer.
+
 
 // В строгом режиме, значение this в методе getFullName, при вызове как колбэк-функции callback(), будет undefined. При обращении к свойствам firstName и lastName будет ошибка, так как undefined это не объект.
 
@@ -286,7 +296,7 @@
 // };
 
 // // // ❌ Было
-// // makeMessage(customer.getFullName); // Будет ошибка при вызове функции
+// makeMessage(customer.getFullName); // Будет ошибка при вызове функции - Обрабатываем заявку от undefined undefined
 
 // // // ✅ Стало
 // makeMessage(customer.getFullName.bind(baker)); // Обрабатываем заявку от Antony Hopkins.
