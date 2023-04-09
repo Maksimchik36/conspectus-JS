@@ -402,6 +402,7 @@
 
 // console.log(dog.hasOwnProperty("legs")); // false
 // console.log(dog.legs); // 4
+
 // Обращение dog.name работает очевидным образом - возвращает собственное свойство name объекта dog. При обращении к dog.legs интерпретатор ищет свойство legs в объекте dog, не находит и продолжает поиск в объекте по ссылке из dog.__proto__, то есть, в данном случае, в объекте animal - его прототипе.
 
 // То есть прототип - это резервное хранилище свойств и методов объекта, автоматически используемое при их поиске. У объекта, который выступает прототипом может также быть свой прототип, у того свой, и так далее.
@@ -534,15 +535,27 @@
 //   }
 
 //   // Метод getEmail
-//   getEmail() {
+//     getEmail() {
+//       console.log("getEmail:", this.email);
 //     return this.email;
 //   }
 
 //   // Метод changeEmail
 //   changeEmail(newEmail) {
 //     this.email = newEmail;
+//     console.log("changeEmail:", this.email);
 //   }
 // }
+
+// const poly = new User({
+//   name: "Поли",
+//   email: "poly@mail.com",
+// });
+
+// poly.getEmail(); // getEmail: poly@mail.com
+// poly.changeEmail("polyna@gmail.com") //changeEmail: polyna@gmail.com
+// poly.getEmail(); // getEmail: poly@mail.com
+// console.log("poly", poly); // poly -> User {name: 'Поли', email: 'polyna@gmail.com'}
 
 
 // Приватные свойства
@@ -555,7 +568,7 @@
 
 // class User {
 // //   // Необязательное объявление публичных свойств
-// //   name;
+//   name;
 // //   // Обязательное объявление приватных свойств
 //   #email;
 
@@ -580,7 +593,9 @@
 
 // mango.changeEmail("mango@supermail.com");
 // console.log(mango.getEmail()); // mango@supermail.com
-// console.log(mango.#email); // Будет ошибка, это приватное свойство
+// console.log(mango.#email); // Будет ошибка, это приватное свойство. Uncaught SyntaxError: Private field '#email' must be declared in an enclosing class (at module-05.js:596:18)
+// console.log(mango.email); // undefined
+
 
 // Методы класса также могут быть приватными, то есть доступны только в теле класса. Для этого перед их именем необходимо поставить символ #.
 
@@ -668,12 +683,13 @@
 //   role: User.Roles.ADMIN,
 // });
 
-// console.log(mango.Roles); // undefined
-// console.log(User.Roles); // { ADMIN: "admin", EDITOR: "editor" }
+// console.log("mango", mango); // User {#email: 'mango@mail.com', #role: 'admin'}
+// console.log("mango.Roles", mango.Roles); // undefined
+// console.log("User.Roles", User.Roles); // { ADMIN: "admin", EDITOR: "editor" }
 
-// console.log(mango.role); // "admin"
+// console.log("mango.role", mango.role); // "admin"
 // mango.role = User.Roles.EDITOR;
-// console.log(mango.role); // "editor"
+// console.log("mango.role", mango.role); // "editor"
 
 // Статические свойства также могут быть приватные, то есть доступные только внутри класса. Для этого имя совйства должно начинаться с символа #, также как приватные свойства. Обращение к приватному статическому свойству вне тела класса вызовет ошибку.
 
@@ -699,8 +715,8 @@
 
 // const mango = new User({ email: "mango@mail.com" });
 
-// console.log("Is poly@mail.com taken? -", User.isEmailTaken("poly@mail.com"));
-// console.log("Is mango@mail.com taken? -", User.isEmailTaken("mango@mail.com"));
+// console.log("Is poly@mail.com taken? -", User.isEmailTaken("poly@mail.com")); // false
+// console.log("Is mango@mail.com taken? -", User.isEmailTaken("mango@mail.com")); // true
 
 // Особенность статических методов в том, что во время их вызова ключевое слово this ссылается на сам класс. Это значит что статический метод может получить доступ к статическим свойствам класса, но не к свойствам экземпляра. Логично, потому что статические методы вызывает сам класс, а не его экземпляры.
 
@@ -723,26 +739,40 @@
 // Вместо этого можно сделать общий класс User, который будет хранить набор общих свойств и методов, после чего сделать классы для каждого типа пользователя которые наследуют этот набор от класса User. При необходимости изменить что-то общее, достаточно будет поменять только код класса User.
 
 // class User {
+//     #email
 //   constructor(email) {
-//     this.email = email;
+//     this.#email = email;
 //   }
 
 //   get email() {
-//     return this.email;
+//     return this.#email;
 //   }
 
 //   set email(newEmail) {
-//     this.email = newEmail;
+//     this.#email = newEmail;
 //   }
 // }
 
 // class ContentEditor extends User {
+//     #name
 //   // Тело класса ContentEditor
+//     constructor(name, email) {
+//         super(email),
+//             this.#name = name;
+//     }
+//       get name() {
+//     return this.#name;
+//   }
+
+//   set name(newName) {
+//     this.#name = newName;
+//   }
 // }
 
-// const editor = new ContentEditor("mango@mail.com");
-// console.log(editor); // { email: "mango@mail.com" }
+// const editor = new ContentEditor("Mango", "mango@mail.com");
+// console.log(editor); // ContentEditor {#email: 'mango@mail.com', #name: 'Mango'}
 // console.log(editor.email); // "mango@mail.com"
+
 
 // Класс ContentEditor наследует от класса User его конструктор, геттер и сеттер email, а также одноимённое публичное свойство. Важно помнить что приватные свойства и методы класса-родителя не наследуются классом-ребёнком.
 
@@ -782,7 +812,20 @@
 
 // В дочернем классе можно объявлять методы которые будут доступны только его экземплярам.
 
-// // Представим что выше есть объявление класса User
+// class User {
+//     #email
+//   constructor(email) {
+//     this.#email = email;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
 
 // class ContentEditor extends User {
 //   constructor({ email, posts }) {
