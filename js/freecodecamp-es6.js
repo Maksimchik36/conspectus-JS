@@ -364,3 +364,398 @@
 // You should use destructuring to create the lowToday variable.
 // You should use destructuring to create the highToday variable.
 // lowToday should be equal to 64 and highToday should be equal to 77.
+
+
+
+
+
+//    ???????????????????????????????????????????????????????
+
+
+
+
+// 12. Use Destructuring Assignment to Assign Variables from Arrays
+// Use destructuring assignment to swap the values of a and b so that a receives the value stored in b, and b receives the value stored in a.
+
+//task
+// let a = 8, b = 6;
+// Only change code below this line
+
+// solution
+
+
+
+
+
+// The value of a should be 6, after swapping.
+// The value of b should be 8, after swapping.
+// You should use array destructuring to swap a and b.
+
+
+
+
+
+
+
+// 13. Destructuring via rest elements
+// Use a destructuring assignment with the rest syntax to emulate the behavior of Array.prototype.slice(). removeFirstTwo() should return a sub-array of the original array list with the first two elements omitted.
+
+// task
+// function removeFirstTwo(list) {
+//   // Only change code below this line
+//   const shorterList = list; // Change this line
+//   // Only change code above this line
+//   return shorterList;
+// }
+
+// solution
+// function removeFirstTwo(list) {
+//   const [, , ...shorterList] = list;
+//   console.log("shorterList", shorterList);
+//   return shorterList;
+// }
+
+// const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const sourceWithoutFirstTwo = removeFirstTwo(source);
+
+// removeFirstTwo([1, 2, 3, 4, 5]) // should be [3, 4, 5]
+// removeFirstTwo() // should not modify list
+// Array.slice() // should not be used.
+// Destructuring on list should be used.
+
+
+
+
+
+
+// 14. Use Destructuring Assignment to Pass an Object as a Function's Parameters
+// Use destructuring assignment within the argument to the function half to send only max and min inside the function.
+
+// task
+// const stats = {
+//   max: 56.78,
+//   standard_deviation: 4.34,
+//   median: 34.54,
+//   mode: 23.87,
+//   min: -0.75,
+//   average: 35.85
+// };
+
+// // Only change code below this line
+// const half = (stats) => (stats.max + stats.min) / 2.0;
+// // Only change code above this line
+
+// solution
+// const stats = {
+//   max: 56.78,
+//   standard_deviation: 4.34,
+//   median: 34.54,
+//   mode: 23.87,
+//   min: -0.75,
+//   average: 35.85
+// };
+
+// const half = ({ max, min }) => (max + min) / 2.0;
+// console.log("half(stats)", half(stats));
+
+
+// stats should be an object.
+// half(stats) should be 28.015
+// Destructuring should be used.
+// Destructured parameter should be used.
+
+
+
+
+
+
+// 15. Create Strings using Template Literals
+// Use template literal syntax with backticks to create an array of list element (li) strings. Each list element's text should be one of the array elements from the failure property on the result object and have a class attribute with the value text-warning. The makeList function should return the array of list item strings.
+
+// Use an iterator method (any kind of loop) to get the desired output (shown below).
+
+// [
+//   '<li class="text-warning">no-var</li>',
+//   '<li class="text-warning">var-on-top</li>',
+//   '<li class="text-warning">linebreak</li>'
+// ]
+
+// task
+// const result = {
+//   success: ["max-length", "no-amd", "prefer-arrow-functions"],
+//   failure: ["no-var", "var-on-top", "linebreak"],
+//   skipped: ["no-extra-semi", "no-dup-keys"]
+// };
+
+// function makeList(arr) {
+//   // Only change code below this line
+//   const failureItems = [];
+//   // Only change code above this line\
+//   return failureItems;
+// }
+// const failuresList = makeList(result.failure);
+
+// solution
+// const result = {
+//   success: ["max-length", "no-amd", "prefer-arrow-functions"],
+//   failure: ["no-var", "var-on-top", "linebreak"],
+//   skipped: ["no-extra-semi", "no-dup-keys"]
+// };
+
+// function makeList(arr) {
+//   // Only change code below this line
+//   const failureItems = arr.map(item =>`<li class="text-warning">${item}</li>`);
+//   // Only change code above this line
+// console.log("failureItems", failureItems)
+//   return failureItems;
+// }
+
+// const failuresList = makeList(result.failure);
+
+
+// failuresList should be an array containing result failure messages.
+// failuresList should be equal to the specified output.
+// Template strings and expression interpolation should be used.
+// An iterator should be used.
+
+
+
+
+// 16. Write Concise Object Literal Declarations Using Object Property Shorthand
+// Use object property shorthand with object literals to create and return an object with name, age and gender properties.
+
+// task
+// const createPerson = (name, age, gender) => {
+//   // Only change code below this line
+//   return {
+//     name: name,
+//     age: age,
+//     gender: gender
+//   };
+//   // Only change code above this line
+// };
+
+// solution
+// const createPerson = (name, age, gender) => {
+//     console.log("result", {
+//         name, age, gender});
+//   return {
+//     name,
+//     age,
+//     gender
+//   };
+// };
+
+// createPerson("Zodiac Hasbro", 56, "male") // should return {name: "Zodiac Hasbro", age: 56, gender: "male"}.
+// // Your code should not use key:value.
+
+
+
+
+
+// 17. Write Concise Declarative Functions with ES6
+// Refactor the function setGear inside the object bicycle to use the shorthand syntax described above.
+
+// task
+// Only change code below this line
+// const bicycle = {
+//   gear: 2,
+//   setGear: function(newGear) {
+//     this.gear = newGear;
+//   }
+// };
+// Only change code above this line
+
+// solution
+// const bicycle = {
+//   gear: 2,
+//   setGear(newGear) {
+//       this.gear = newGear;
+//       console.log("this.gear", this.gear);
+//   }
+// };
+
+// Traditional function expression should not be used.
+// setGear should be a declarative function.
+// bicycle.setGear(48) // should change the gear value to 48.
+
+
+
+
+
+
+// 18. Use class Syntax to Define a Constructor Function
+// Use the class keyword and write a constructor to create the Vegetable class.
+// The Vegetable class allows you to create a vegetable object with a property name that gets passed to the constructor.
+
+// task
+// Only change code below this line
+ // Only change code above this line
+// const carrot = new Vegetable('carrot');
+// console.log(carrot.name); // Should display 'carrot'
+
+// solution
+// class Vegetable{
+//   constructor(name){
+//     this.name = name;
+//   }
+// }
+// // Only change code above this line
+
+// const carrot = new Vegetable('carrot');
+// console.log(carrot.name); // Should display 'carrot'
+
+// Vegetable should be a class with a defined constructor method.
+// The class keyword should be used.
+// Vegetable should be able to be instantiated.
+// carrot.name should return carrot.
+
+
+
+
+// 19. Use getters and setters to Control Access to an Object
+// Use the class keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+// In the class, create a getter to obtain the temperature in Celsius and a setter to set the temperature in Celsius.
+// Remember that C = 5/9 * (F - 32) and F = C * 9.0 / 5 + 32, where F is the value of temperature in Fahrenheit, and C is the value of the same temperature in Celsius.
+// Note: When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+// This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
+// In other words, you are abstracting implementation details from the user.
+
+// task
+// Only change code below this line
+// Only change code above this line
+
+// const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+// let temp = thermos.temperature; // 24.44 in Celsius
+// thermos.temperature = 26;
+// temp = thermos.temperature; // 26 in
+
+// solution
+// class Thermostat{
+//   constructor(temperature){
+//     this._temperature = temperature;
+//   }
+//     get temperature() {
+//       // преобразует и выдает результат в градусах цельсия
+//      return 5/9 * (this._temperature - 32) ;
+//   }
+//     set temperature(data) {
+//       // данные вводятся в градусах по цельсиию, преобразуются и записываются по фаренгейту
+//     this._temperature = data * 9.0 / 5 + 32;
+//   }
+// }
+
+// // данные температуры вводятся по Фаренгейту
+// const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+// console.log("thermos", thermos);
+// let temp = thermos.temperature; // 24.44 in Celsius
+// console.log("temp", temp);
+// thermos.temperature = 26;
+// temp = thermos.temperature; // 26 in Celsius
+// console.log("temp", temp);
+
+
+
+// Thermostat should be a class with a defined constructor method.
+// class keyword should be used.
+// Thermostat should be able to be instantiated.
+// When instantiated with a Fahrenheit value, Thermostat should set the correct temperature.
+// A getter should be defined.
+// A setter should be defined.
+// Calling the setter with a Celsius value should set the temperature.
+
+
+
+
+
+
+// 20. Create a Module Script
+// Add a script to the HTML document of type module and give it the source file of index.js
+
+// task
+{/* <html>
+  <body>
+    <!-- Only change code below this line -->
+    <!-- Only change code above this line -->
+  </body>
+</html> */}
+
+// solution
+{/* <html>
+  <body>
+  .....
+  .....
+    <script type="module" src="filename.js"></script>
+  </body>
+</html> */}
+
+// You should create a script tag.
+// Your script tag should have the type attribute with a value of module.
+// Your script tag should have a src of index.js.
+
+
+
+
+
+// 21. Use export to Share a Code Block
+// There are two string-related functions in the editor. Export both of them using the method of your choice.
+
+// task
+// const uppercaseString = (string) => {
+//   return string.toUpperCase();
+// }
+// const lowercaseString = (string) => {
+//   return string.toLowerCase()
+// }
+
+// solution
+// const uppercaseString = (string) => {
+//   return string.toUpperCase();
+// }
+// const lowercaseString = (string) => {
+//   return string.toLowerCase()
+// }
+// export {uppercaseString, lowercaseString};
+
+// You should properly export uppercaseString.
+// You should properly export lowercaseString.
+
+
+
+
+
+
+// 21. Reuse JavaScript Code Using import
+// Add the appropriate import statement that will allow the current file to use the uppercaseString and lowercaseString functions you exported in the previous lesson. These functions are in a file called string_functions.js, which is in the same directory as the current file.
+
+// task
+// Only change code above this line
+// uppercaseString("hello");
+// lowercaseString("WORLD!");
+
+// solution
+// import { uppercaseString, lowercaseString } from './string_functions.js';
+// uppercaseString("hello");
+// lowercaseString("WORLD!");
+
+// You should properly import uppercaseString.
+// You should properly import lowercaseString.
+
+
+
+
+
+// 22. Use * to Import Everything from a File
+// The code in this file requires the contents of the file: string_functions.js, that is in the same directory as the current file. Use the import * as syntax to import everything from the file into an object called stringFunctions.
+
+// task
+// Only change code above this line
+// stringFunctions.uppercaseString("hello");
+// stringFunctions.lowercaseString("WORLD!");
+
+// solution
+// import * as stringFunctions from './string_functions.js'
+// stringFunctions.uppercaseString("hello");
+// stringFunctions.lowercaseString("WORLD!");
+
+// Your code should properly use import * as syntax.
