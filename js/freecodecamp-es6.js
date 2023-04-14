@@ -382,10 +382,8 @@
 // Only change code below this line
 
 // solution
-
-
-
-
+// let a = 8, b = 6;
+// [a, b] = [b, a];
 
 // The value of a should be 6, after swapping.
 // The value of b should be 8, after swapping.
@@ -725,7 +723,7 @@
 
 
 
-// 21. Reuse JavaScript Code Using import
+// 22. Reuse JavaScript Code Using import
 // Add the appropriate import statement that will allow the current file to use the uppercaseString and lowercaseString functions you exported in the previous lesson. These functions are in a file called string_functions.js, which is in the same directory as the current file.
 
 // task
@@ -745,7 +743,7 @@
 
 
 
-// 22. Use * to Import Everything from a File
+// 23. Use * to Import Everything from a File
 // The code in this file requires the contents of the file: string_functions.js, that is in the same directory as the current file. Use the import * as syntax to import everything from the file into an object called stringFunctions.
 
 // task
@@ -759,3 +757,144 @@
 // stringFunctions.lowercaseString("WORLD!");
 
 // Your code should properly use import * as syntax.
+
+
+
+
+
+// 24. Create an Export Fallback with export default
+// The following function should be the fallback value for the module. Please add the necessary code to do so.
+
+// task
+// function subtract(x, y) {
+//   return x - y;
+// }
+
+// solution
+// export default function subtract(x, y) {
+//   return x - y;
+// }
+
+// Your code should use an export fallback.
+
+
+
+
+
+
+// 25. Import a Default Export
+// In the following code, import the default export from the math_functions.js file, found in the same directory as this file. Give the import the name subtract.
+
+// task
+// Only change code above this line
+// subtract(7,4);
+
+// solution
+// import subtract from "./math_functions.js"
+// subtract(7,4);
+
+// You should properly import subtract from math_functions.js.
+
+
+
+
+// 26. Create a JavaScript Promise
+// Create a new promise called makeServerRequest. Pass in a function with resolve and reject parameters to the constructor.
+
+// solution
+// const makeServerRequest = new Promise((resolve, reject)=>{
+//   console.log(resolve);
+//   console.log(reject);
+// })
+
+// You should assign a promise to a declared variable named makeServerRequest.
+// Your promise should receive a function with resolve and reject as parameters.
+
+
+
+
+
+
+// 27. Complete a Promise with resolve and reject
+// Make the promise handle success and failure. If responseFromServer is true, call the resolve method to successfully complete the promise. Pass resolve a string with the value We got the data. If responseFromServer is false, use the reject method instead and pass it the string: Data not received.
+
+// task
+// const makeServerRequest = new Promise((resolve, reject) => {
+//   // responseFromServer represents a response from a server
+//   let responseFromServer;
+    
+//   if(responseFromServer) {
+//     // Change this line
+//   } else {
+//     // Change this line
+//   }
+// });
+
+// solution
+// const makeServerRequest = new Promise((resolve, reject) => {
+//   // responseFromServer represents a response from a server
+//   let responseFromServer;
+//   if(responseFromServer) {
+// resolve("We got the data")
+//   } else {
+// reject("Data not received")
+//   }
+// });
+
+// resolve should be called with the expected string when the if condition is true.
+// reject should be called with the expected string when the if condition is false.
+
+
+
+
+// 28. Handle a Fulfilled Promise with then
+// Add the then method to your promise. Use result as the parameter of its callback function and log result to the console.
+
+// task
+// const makeServerRequest = new Promise((resolve, reject) => {
+//   // responseFromServer is set to true to represent a successful response from a server
+//   let responseFromServer = true;
+//   if(responseFromServer) {
+//     resolve("We got the data");
+//   } else {
+//     reject("Data not received");
+//   }
+// });
+
+// solution
+// makeServerRequest.then(result => console.log(result))
+
+// You should call the then method on the promise.
+// Your then method should have a callback function with result as its parameter.
+// You should log result to the console.
+
+
+
+
+// 29. Handle a Rejected Promise with catch
+// Add the catch method to your promise. Use error as the parameter of its callback function and log error to the console.
+
+// task
+// const makeServerRequest = new Promise((resolve, reject) => {
+//   // responseFromServer is set to false to represent an unsuccessful response from a server
+//   let responseFromServer = false;
+    
+//   if(responseFromServer) {
+//     resolve("We got the data");
+//   } else {
+//     reject("Data not received");
+//   }
+// });
+
+// makeServerRequest.then(result => {
+//   console.log(result);
+// });
+
+// solution
+// makeServerRequest.catch(error => {
+//   console.log(error);
+// });
+
+// You should call the catch method on the promise.
+// Your catch method should have a callback function with error as its parameter.
+// You should log error to the console.
