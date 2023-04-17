@@ -387,11 +387,77 @@
 // let myRegex = /s+/g;
 // let result = difficultSpelling.match(myRegex); // выдает массив значений 1 буквы, общее кол-во которых в слове больше 1
 
-
-
-
-
-
 // Your regex myRegex should use the + sign to match one or more s characters.
 // Your regex myRegex should match 2 items.
 // The result variable should be an array with two matches of ss
+
+
+
+
+
+// 13. Match Characters that Occur Zero or More Times
+// The last challenge used the plus + sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
+
+// The character to do this is the asterisk or star: *.
+
+// let soccerWord = "gooooooooal!";
+// let gPhrase = "gut feeling";
+// let oPhrase = "over the moon";
+// let goRegex = /go*/;
+// // символ g - обязательное наличие, а символ o - необязательное наличие
+// console.log(soccerWord.match(goRegex));
+// console.log(gPhrase.match(goRegex));
+// console.log(oPhrase.match(goRegex));
+
+// In order, the three match calls would return the values ["goooooooo"], ["g"], and null.
+
+// For this challenge, chewieQuote has been initialized as the string Aaaaaaaaaaaaaaaarrrgh! behind the scenes. Create a regex chewieRegex that uses the * character to match an uppercase A character immediately followed by zero or more lowercase a characters in chewieQuote. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+
+// task
+// // Only change code below this line
+// let chewieRegex = /change/; // Change this line
+// // Only change code above this line
+// let result = chewieQuote.match(chewieRegex);
+
+// solution
+// let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+// let chewieRegex = /Aa*/;
+// let result = chewieQuote.match(chewieRegex);
+// console.log(result);
+
+// Your regex chewieRegex should use the * character to match zero or more a characters.
+// Your regex should match the string A in chewieQuote.
+// Your regex should match the string Aaaaaaaaaaaaaaaa in chewieQuote.
+// Your regex chewieRegex should match 16 characters in chewieQuote.
+// Your regex should not match any characters in the string He made a fair move. Screaming about it can't help you.
+// Your regex should not match any characters in the string Let him have it. It's not wise to upset a Wookiee.
+
+
+
+
+
+// 14. Find Characters with Lazy Matching
+// In regular expressions, a greedy match finds the longest possible part of a string that fits the regex pattern and returns it as a match. The alternative is called a lazy match, which finds the smallest possible part of the string that satisfies the regex pattern.
+// You can apply the regex /t[a-z]*i/ to the string "titanic". This regex is basically a pattern that starts with t, ends with i, and has some letters in between.
+// Regular expressions are by default greedy, so the match would return ["titani"]. It finds the largest sub-string possible to fit the pattern.
+
+// However, you can use the ? character to change it to lazy matching. "titanic" matched against the adjusted regex of /t[a-z]*?i/ returns ["ti"].
+
+// Note: Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
+
+// Fix the regex /<.*>/ to return the HTML tag <h1> and not the text "<h1>Winter is coming</h1>". Remember the wildcard . in a regular expression matches any character.
+
+// task
+// let text = "<h1>Winter is coming</h1>";
+// let myRegex = /<.*>/; // Change this line
+// let result = text.match(myRegex);
+
+// solution
+// let text = "<h1>Winter is coming</h1>";
+// let myRegex = /<.*?>/; 
+// let result = text.match(myRegex);
+// console.log(result);
+
+// The result variable should be an array with <h1> in it
+// myRegex should use lazy matching
+// myRegex should not include the string h1
