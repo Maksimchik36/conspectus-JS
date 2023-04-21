@@ -1,3 +1,21 @@
+// examples
+// 5. let extractStr = "Extract the word 'coding' from this string.";
+//    let codingRegex = /coding/;
+//    let result = extractStr.match(codingRegex);
+//    "где ищем".match("что ищем") - match() - синтаксис противоположен методу test()
+//    "что ищем".test("где ищем")  - test()
+// 3. /dog|cat|bird|fish/; - перечисление вариантов
+// 4. /freeCodeCamp/i; // буква "i" игнорирует регистр
+// 6. /Repeat/g; - выдает массив значений. без "g" - только первое совпадение
+// 7. /.un/ -  подстановочный знак "." (точка) - подразумевает, что вместо неё может быть любой символ
+// 8. /b[aiu]g/ - [aiu] - перечисляет возможные символы
+// 9. [a-e]at/ - [a-e] - диапазон букв от "а" до "е"
+// 10. /[2-6]/gi - [2-6] - диапазон чисел от "2" до "6"
+
+
+
+
+
 // 1. Using the Test Method
 // Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.
 // If you want to find the word the in the string The dog chased the cat, you could use the following regular expression: /the/. Notice that quote marks are not required within the regular expression.
@@ -108,7 +126,7 @@
 
 // solution
 // let myString = "freeCodeCamp";
-// let fccRegex = /freeCodeCamp/i; // буква i игнорирует регистр
+// let fccRegex = /freeCodeCamp/i; // буква "i" игнорирует регистр
 // let result = fccRegex.test(myString);
 
 // Your regex should match the string freeCodeCamp
@@ -189,8 +207,9 @@
 
 // solution
 // let twinkleStar = "Twinkle, twinkle, little star";
-// let starRegex = /Twinkle/gi;
+// let starRegex = /Twinkle/gi; - выдает массив значений. без "g" - только первое совпадение
 // let result = twinkleStar.match(starRegex);
+// console.log("result", result);
 
 // Your regex starRegex should use the global flag g
 // Your regex starRegex should use the case insensitive flag i
@@ -221,6 +240,7 @@
 //solution
 // let exampleStr = "Let's have fun with regular expressions!";
 // let unRegex = /.un/;
+// подстановочный знак "." (точка) - подразумевает, что вместо неё может быть любой символ
 // let result = unRegex.test(exampleStr);
 
 // You should use the .test() method.
@@ -247,6 +267,7 @@
 // let bugStr = "bug";
 // let bogStr = "bog";
 // let bgRegex = /b[aiu]g/;
+//  [aiu] - перечисляет возможные символы
 // bigStr.match(bgRegex);
 // bagStr.match(bgRegex);
 // bugStr.match(bgRegex);
@@ -286,6 +307,7 @@
 // let batStr = "bat";
 // let matStr = "mat";
 // let bgRegex = /[a-e]at/;
+// [a-e] - диапазон букв от "а" до "е"
 // catStr.match(bgRegex);
 // batStr.match(bgRegex);
 // matStr.match(bgRegex);
@@ -701,3 +723,46 @@
 // Your regex should find 15 non-digits in the string One, Two, Three.
 // Your regex should find 12 non-digits in the string 21 Jump Street.
 // Your regex should find 17 non-digits in the string 2001: A Space Odyssey.
+
+
+
+
+// 22. Restrict Possible Usernames
+// Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+
+// You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+
+// Usernames can only use alpha-numeric characters.
+
+// The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+
+// Username letters can be lowercase and uppercase.
+
+// Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+// Change the regex userCheck to fit the constraints listed above.
+
+// task
+// let username = "JackOfAllTrades";
+// let userCheck = /^\D\D+\w+/g; // Change this line
+// let res = username.match(userCheck);
+// console.log(res)
+// let result = userCheck.test(username);
+// console.log(result)
+
+// solution
+
+
+// Your regex should match the string JACK
+// Your regex should not match the string J
+// Your regex should match the string Jo
+// Your regex should match the string Oceans11
+// Your regex should match the string RegexGuru
+// Your regex should not match the string 007
+// Your regex should not match the string 9
+// Your regex should not match the string A1
+// Your regex should not match the string BadUs3rnam3
+// Your regex should match the string Z97
+// Your regex should not match the string c57bT3
+// Your regex should match the string AB1
+// Your regex should not match the string J%4
