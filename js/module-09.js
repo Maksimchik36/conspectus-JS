@@ -113,6 +113,21 @@
 
 // Поскольку мы вызвали clearTimeout(), который исполнится раньше чем будет вызвана функция greet(), таймер с timerId будет удалён и регистрация отложенного вызова greet() отменится. Поэтому в консоль ничего не выведется.
 
+// Вот пример, когда функция выполнится:
+// const greet = () => {
+//   console.log("Hello!");
+// };
+
+// const timerId = setTimeout(greet, 3000);
+
+// const closeFunc = () => {
+//     console.log("Сlose function and clear Timeout");
+//     clearTimeout(timerId);
+// }
+
+// setTimeout(closeFunc, 5000)
+ 
+
 // Интервал
 // Метод setInterval() - это простой способ повторения кода снова и снова с установленным промежутком времени повторений. Синтаксис и параметры такие же как у setTimeout(). В отличие от setTimeout(), интервал запускает выполнение функции не один раз, а регулярно повторяет её через указанный промежуток времени. Остановить исполнение можно вызовом метода clearInterval(id).
 
@@ -355,7 +370,7 @@
 // reject(error) - функция для вызвова в случае ошибки. Переданный ей аргумент будет значением отклоненного промиса.
 
 // Change value of isSuccess variable to call resolve or reject
-// const isSuccess = true;
+// const isSuccess = true;  // !!!!!!!!!!!!!!!!!!!!
 
 // const promise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
@@ -388,8 +403,9 @@
 // В примере, callback-функция onResolve будет вызвана через две секунды если обещание выполнится успешно, а onReject вызовется через две секунды в том случае, если обещание выполнится с ошибкой.
 
 // // Change value of isSuccess variable to call resolve or reject
-// const isSuccess = true;
+// const isSuccess = true;   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+// // объект содержит возможные варианты результата Promise - при успешном и неудачном выполнении. т.е. в промисе прописывается только логика, зависящая от какого-то условия (в данном случае - isSuccess)
 // const promise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     if (isSuccess) {
@@ -435,7 +451,7 @@
 // Коллбек-функция будет вызвана при выполнении промиса с ошибкой, и получит её как аргумент.
 
 // // Change value of isSuccess variable to call resolve or reject
-// const isSuccess = true;
+// const isSuccess = false;  // !!!!!!!!!!!!!!!!!!!!
 
 // const promise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
@@ -500,11 +516,11 @@
 // promise
 //   .then(value => {
 //     console.log(value); // 5
-//     return value * 2;
+//     return value * 2;  // 10
 //   })
 //   .then(value => {
 //     console.log(value); // 10
-//     return value * 3;
+//     return value * 3;   // 30
 //   })
 //   .then(value => {
 //     console.log(value); // 30
@@ -529,19 +545,21 @@
 //     const isSuccess = true;
 
 //     if (isSuccess) {
-//       onSuccess("success value");
+//       onSuccess("Success value.");
 //     } else {
-//       onError("error");
+//       onError("Big Error.");
 //     }
 //   }, 2000);
 // };
 
+// // Содержимое скобок 548 строки передается в эту функцию как переменная user
 // const onFetchSuccess = user => {
-//   console.log(user);
+//   console.log("user in onFetchSuccess:", user);
 // };
 
+// // Содержимое скобок 550 строки передается в эту функцию как переменная error
 // const onFetchError = error => {
-//   console.error(error);
+//   console.error("error in onFetchError:", error);
 // };
 
 // fetchUserFromServer("Mango", onFetchSuccess, onFetchError);

@@ -9,8 +9,22 @@
 // 6. /Repeat/g; - выдает массив значений. без "g" - только первое совпадение
 // 7. /.un/ -  подстановочный знак "." (точка) - подразумевает, что вместо неё может быть любой символ
 // 8. /b[aiu]g/ - [aiu] - перечисляет возможные символы
-// 9. [a-e]at/ - [a-e] - диапазон букв от "а" до "е"
-// 10. /[2-6]/gi - [2-6] - диапазон чисел от "2" до "6"
+// 9. [a-e]at/ - [a-e] - перечисляет диапазон букв от "а" до "е"
+// 10. /[2-6]/gi - [2-6] - перечисляет диапазон чисел от "2" до "6"
+// 11. /[^0-9aeiou] - символ "^" - исключает из поиска последующие после него символы из поиска
+// 12. /s+/g - выдает массив значений 1 буквы (в данном случае буквы "s"), общее кол-во которых в слове больше либо равно 1, и они могут стоять друг за другом в неограниченном количестве. и повторяться благодаря "g"
+// 13. /go*/ - символ "*" говорит о том, что символ "o" - необязательно должен присутствоват. а символ "g" - обязательно
+// 14. /<.*?>/ - обычно match извлекает максимум информации из исходника. чтобы извлечь минимум - используют символ "?"
+// 16. /^Cal/ - символ "^" проверяет начинается ли фраза со слова, которое идет за этим символом (через test, а не match)
+// 17. /choose$/ - символ "$" проверяет заканчивается ли исходная строка текстом, который указан до этого символа
+// 18. /\w/g - упрощенный вариант проверки всех букв и цифр A-Za-z0-9, включая символ "_", т.е ищет следующие символы [A-Za-z0-9_]
+// 19. /\W/g -  сравнивает любые символы, кроме всех букв и цифр
+// 20. /\d/g - сравнивает только цифры
+// 21. /\D/g - сравнивает все, кроме цифр
+
+
+
+
 
 
 
@@ -381,7 +395,9 @@
 //solution
 // let quoteSample = "3 blind mice.";
 // let myRegex = /[^0-9aeiou]/gi;
+// // символ "^" - исключает последующие после него символы из поиска
 // let result = quoteSample.match(myRegex);
+// console.log("result", result);
 
 // Your regex myRegex should match 9 items.
 // Your regex myRegex should use the global flag.
@@ -405,9 +421,10 @@
 // let result = difficultSpelling.match(myRegex);
 
 // solution
-// let difficultSpelling = "Mississippi";
+// let difficultSpelling = "Mississippis";
 // let myRegex = /s+/g;
 // let result = difficultSpelling.match(myRegex); // выдает массив значений 1 буквы, общее кол-во которых в слове больше 1
+// console.log("result", result);
 
 // Your regex myRegex should use the + sign to match one or more s characters.
 // Your regex myRegex should match 2 items.
@@ -513,13 +530,13 @@
 // solution
 // let reCriminals = /C+/;
 
-// Your regex should match one criminal (C) in the string C
-// Your regex should match two criminals (CC) in the string CC
-// Your regex should match three criminals (CCC) in the string P1P5P4CCCcP2P6P3.
-// Your regex should match five criminals (CCCCC) in the string P6P2P7P4P5CCCCCP3P1
-// Your regex should not match any criminals in the empty string ""
-// Your regex should not match any criminals in the string P1P2P3
-// Your regex should match fifty criminals (CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC) in the string P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3.
+// console.log("C".match(reCriminals)); // Your regex should match one criminal (C) in the string C
+// console.log("CC".match(reCriminals)); // Your regex should match two criminals (CC) in the string CC
+// console.log("CCC".match(reCriminals));// Your regex should match three criminals (CCC) in the string P1P5P4CCCcP2P6P3.
+// console.log("CCCCC".match(reCriminals));// Your regex should match five criminals (CCCCC) in the string P6P2P7P4P5CCCCCP3P1
+// console.log("".match(reCriminals));// Your regex should not match any criminals in the empty string "". (null)
+// console.log("P1P2P3".match(reCriminals));// Your regex should not match any criminals in the string P1P2P3
+// console.log("P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals));// Your regex should match fifty criminals (CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC) in the string P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3.
 
 
 
@@ -544,14 +561,20 @@
 
 // solution
 // let rickyAndCal = "Cal and Ricky both like racing.";
-// let calRegex = /^Cal/; // Change this line
-// let result = calRegex.test(rickyAndCal);
-// console.log(result)
+// let calRegex = /^Cal/;
+// let rickyRegex = /^Ricky/;
 
-// Waiting:Your regex should search for the string Cal with a capital letter.
-// Waiting:Your regex should not use any flags.
-// Waiting:Your regex should match the string Cal at the beginning of the string.
-// Waiting:Your regex should not match the string Cal in the middle of a string.
+// let resultCal = calRegex.test(rickyAndCal);
+// let resultRicky = rickyRegex.test(rickyAndCal);
+// // проверяет, начинается ли фраза с определенного слова
+// console.log("start with Cal", resultCal);
+// console.log("start with Ricky", resultRicky);
+
+
+// Your regex should search for the string Cal with a capital letter.
+// Your regex should not use any flags.
+// Your regex should match the string Cal at the beginning of the string.
+// Your regex should not match the string Cal in the middle of a string.
 
 
 
@@ -575,14 +598,19 @@
 // let lastRegex = /change/; // Change this line
 // let result = lastRegex.test(caboose);
 
-// solution
+// // solution
 // let caboose = "The last car on a train is the caboose";
-// let lastRegex = /caboose$/;
-// let result = lastRegex.test(caboose);
+// let cabooseRegex = /caboose$/;
+// let chooseRegex = /choose$/;
+// // $ проверяет заканчивается ли исходная строка текстом, который указан до этого символа
+// let resultCaboose = cabooseRegex.test(caboose);
+// let resultChoose = chooseRegex.test(caboose);
+// console.log("ends with caboose", resultCaboose);
+// console.log("ends with choose", resultChoose);
 
-// Waiting:You should search for caboose with the dollar sign $ anchor in your regex.
-// Waiting:Your regex should not use any flags.
-// Waiting:You should match caboose at the end of the string The last car on a train is the caboose
+// You should search for caboose with the dollar sign $ anchor in your regex.
+// Your regex should not use any flags.
+// You should match caboose at the end of the string The last car on a train is the caboose
 
 
 
@@ -596,10 +624,10 @@
 // let shortHand = /\w+/;
 // let numbers = "42";
 // let varNames = "important_var";
-// longHand.test(numbers);
-// shortHand.test(numbers);
-// longHand.test(varNames);
-// shortHand.test(varNames);
+// console.log(longHand.test(numbers));
+// console.log(shortHand.test(numbers));
+// console.log(longHand.test(varNames));
+// console.log(shortHand.test(varNames));
 // All four of these test calls would return true.
 
 // These shortcut character classes are also known as shorthand character classes.
@@ -614,6 +642,7 @@
 // solution
 // let quoteSample = "The five boxing wizards jump quickly.";
 // let alphabetRegexV2 = /\w/g;
+// // упрощенный вариант проверки всех букв и цифр A-Za-z0-9 , включая символ "_", - [A-Za-z0-9_]
 // let res = quoteSample.match(alphabetRegexV2);
 // console.log(res);
 // let result = quoteSample.match(alphabetRegexV2).length;
@@ -647,9 +676,10 @@
 // let nonAlphabetRegex = /change/; // Change this line
 // let result = quoteSample.match(nonAlphabetRegex).length;
 
-// solution
+// // solution
 // let quoteSample = "The five boxing wizards jump quickly.";
 // let nonAlphabetRegex = /\W/g;
+// // исключает из сравнения все буквы и цифры
 // let res = quoteSample.match(nonAlphabetRegex);
 // console.log(res);
 // let result = quoteSample.match(nonAlphabetRegex).length;
@@ -676,9 +706,10 @@
 // let numRegex = /change/; // Change this line
 // let result = movieName.match(numRegex).length;
 
-// solution
+// // solution
 // let movieName = "2001: A Space Odyssey";
 // let numRegex = /\d/g;
+// // ищет только цифры
 // let res = movieName.match(numRegex);
 // console.log(res);
 // let result = movieName.match(numRegex).length;
@@ -708,9 +739,10 @@
 // let noNumRegex = /change/; // Change this line
 // let result = movieName.match(noNumRegex).length;
 
-// solution
+// // solution
 // let movieName = "2001: A Space Odyssey";
 // let noNumRegex = /\D/g;
+// // сравнивает все, кроме цифр
 // let res = movieName.match(noNumRegex);
 // console.log(res)
 // let result = movieName.match(noNumRegex).length;
@@ -744,25 +776,39 @@
 
 // task
 // let username = "JackOfAllTrades";
-// let userCheck = /^\D\D+\w+/g; // Change this line
+// let userCheck = /change/; // Change this line
+// let result = userCheck.test(username);
+
+// solution
+// 1. \w  Usernames can only use alpha-numeric characters.
+// 2. \d$    The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+// 3. i  Username letters can be lowercase and uppercase.
+// 4. Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+// let username = "JackOfAllTrades76876";
+// let userCheck = /^\D\D+\w+/gi; // Change this line
 // let res = username.match(userCheck);
 // console.log(res)
 // let result = userCheck.test(username);
-// console.log(result)
+// console.log(result);
 
-// solution
+// let username ="JACK" // Your regex should match the string JACK
+// let username ="J" // Your regex should not match the string J
+// let username ="Jo"// Your regex should match the string Jo
+// let username ="Oceans11" // Your regex should match the string Oceans11
+// let username ="RegexGuru" // Your regex should match the string RegexGuru
+// let username ="007" // Your regex should not match the string 007
+// let username ="9" // Your regex should not match the string 9
+// let username ="A1" // Your regex should not match the string A1
+// let username ="BadUs3rnam3" // Your regex should not match the string BadUs3rnam3
+// let username ="Z97" // Your regex should match the string Z97
+// let username ="c57bT3" // Your regex should not match the string c57bT3
+// let username ="AB1" // Your regex should match the string AB1
+// let username ="J%4" // Your regex should not match the string J%4
 
-
-// Your regex should match the string JACK
-// Your regex should not match the string J
-// Your regex should match the string Jo
-// Your regex should match the string Oceans11
-// Your regex should match the string RegexGuru
-// Your regex should not match the string 007
-// Your regex should not match the string 9
-// Your regex should not match the string A1
-// Your regex should not match the string BadUs3rnam3
-// Your regex should match the string Z97
-// Your regex should not match the string c57bT3
-// Your regex should match the string AB1
-// Your regex should not match the string J%4
+// let username = "JackOfAllTrades76876";
+// let userCheck = /[^_\d].\w+/; // Change this line
+// let res = username.match(userCheck);
+// console.log(res)
+// let result = userCheck.test(username);
+// console.log(result);
